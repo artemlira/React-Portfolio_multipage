@@ -1,0 +1,41 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.header {
+  border: 5px solid tomato;
+  padding-block: 32px 8px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  // gap: 8px;
+  align-items: center;
+
+  svg {
+    flex: 0 0 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.navList,
+.nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navItem {
+  &:hover {
+    color: v.$white;
+  }
+}

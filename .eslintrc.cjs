@@ -34,7 +34,8 @@ module.exports = {
           "type"
         ]
       }
-    ]
+    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
   },
   ignorePatterns: [".eslintrc.cjs", "postcss.config.js", "vite.config.js"],
 };
