@@ -1,22 +1,20 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 export const MyContext = createContext();
 
-function Context(props) {
+export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
-  const value = {
+  const value = useMemo(() => ({
     openMenu,
-    setOpenMenu,
-  };
+    setOpenMenu
+  }), [openMenu, setOpenMenu]);
 
   return (
-    <MyContext.Provider value={value}>{props.children}</MyContext.Provider>
+    <MyContext.Provider value={value}>{children}</MyContext.Provider>
   );
 }
 
-export default Context;
-
 Context.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.arrayOf(PropTypes.shape()).isRequired
 };
