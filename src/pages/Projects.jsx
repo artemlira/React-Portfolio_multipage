@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function Works() {
+function Projects() {
   return (
-    <div>Works</div>
-  )
+    <article className="Projects">
+      Works
+    </article>
+  );
 }
 
-export default Works
+export default Projects;

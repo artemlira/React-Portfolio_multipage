@@ -7,7 +7,9 @@ function TemplateName({ props }) {
     <section className={styles.templateName}>
       <div className="container">
         <div className={styles.container}>
-          TemplateName Component {props}
+          TemplateName Component
+          {' '}
+          {props}
         </div>
       </div>
     </section>
@@ -15,7 +17,7 @@ function TemplateName({ props }) {
 }
 
 TemplateName.propTypes = {
-  props: PropTypes.string.isRequired
-}
+  props: PropTypes.string.isRequired,
+};
 
 export default TemplateName;

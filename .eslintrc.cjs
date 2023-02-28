@@ -37,5 +37,5 @@ module.exports = {
       }
     ]
   },
-  ignorePatterns: [".eslintrc.cjs", "postcss.config.js", "vite.config.js"],
+  ignorePatterns: [".eslintrc.cjs", "vite.config.js"],
 };

@@ -7,7 +7,7 @@ export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
   const value = useMemo(() => ({
     openMenu,
-    setOpenMenu
+    setOpenMenu,
   }), [openMenu, setOpenMenu]);
 
   return (
@@ -16,6 +16,5 @@ export default function Context({ children }) {
 }
 
 Context.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.shape()).isRequired
-}
-
+  children: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};

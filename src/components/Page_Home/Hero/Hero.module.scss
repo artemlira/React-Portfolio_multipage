@@ -1,0 +1,171 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.wrapperContent {
+  display: flex;
+  gap: 1.125rem;
+
+  &:not(:last-child) {
+    margin-bottom: 7rem;
+  }
+
+  @include m.phone {
+    flex-direction: column;
+  }
+}
+
+.content {
+  flex: 1 1 53%;
+  padding-block: 4.625rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: f.ratio(32, 41.98);
+  color: v.$white;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  span {
+    font-weight: 500;
+    color: v.$purple;
+  }
+}
+
+.text {
+  line-height: f.ratio(16, 25);
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.link {
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid v.$purple;
+  color: v.$white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: v.$purple;
+  }
+}
+
+.wrapperImage {
+  flex: 1 1 45%;
+}
+
+.image {
+  width: 100%;
+  height: 24.125rem;
+  background: url('../../../assets/images/Home_Hero/Dots.svg')right 19px bottom 56px / 18% 22% no-repeat,
+    url('../../../assets/images/Home_Hero/bg.png') center / cover no-repeat,
+    url('../../../assets/icons/LogoALBG.svg') left 0px top 84px / 33% 41% no-repeat;
+
+  @include m.netbook {
+    background: url('../../../assets/images/Home_Hero/Dots.svg')right 19px bottom 56px / 18% 22% no-repeat,
+      url('../../../assets/images/Home_Hero/bg.png') center / cover no-repeat,
+      url('../../../assets/icons/LogoALBG.svg') right 0px top 50px / 33% 41% no-repeat;
+  }
+
+  @include m.tablet {
+    background: url('../../../assets/images/Home_Hero/Dots.svg')right 19px bottom 56px / 18% 22% no-repeat,
+      url('../../../assets/images/Home_Hero/bg.png') center / cover no-repeat,
+      url('../../../assets/icons/LogoALBG.svg') right 0px top 50px / 33% 41% no-repeat;
+  }
+
+  @include m.phone {
+    flex: 1 1 24.125rem;
+    background: url('../../../assets/images/Home_Hero/Dots.svg')right 19px bottom 56px / 18% 22% no-repeat,
+      url('../../../assets/images/Home_Hero/bg.png') center / cover no-repeat,
+      url('../../../assets/icons/LogoALBG.svg') right 0px top 50px / 33% 41% no-repeat;
+  }
+
+}
+
+.imageText {
+  font-weight: 500;
+  border: 0.0625rem solid v.$grey;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.5rem;
+  margin-right: 2.5rem;
+
+  @include m.netbook {
+    margin-right: 0;
+  }
+
+  @include m.phone {
+    margin-right: 2.5rem;
+  }
+}
+
+.decor {
+  width: 1rem;
+  height: 1rem;
+  background-color: v.$purple;
+  display: inline-block;
+}
+
+.spanText {
+  font-weight: 600;
+  color: v.$white;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  @include m.adaptiv-value('margin-right', 160, -160, 1);
+
+  @include m.tablet {
+    margin-right: 0;
+  }
+}
+
+.quoteText {
+  border: 0.0625rem solid v.$grey;
+  padding: 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: f.ratio(24, 31.49);
+  color: v.$white;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 2.625rem;
+    height: 1.75rem;
+    background: url('../../../assets/images/Home_Hero/quote_right.png') center no-repeat, v.$black;
+    position: absolute;
+    bottom: -0.8125rem;
+    right: 0.8125rem;
+  }
+
+  &::before {
+    content: '';
+    width: 2.625rem;
+    height: 1.75rem;
+    background: url('../../../assets/images/Home_Hero/quote_left.png') center no-repeat, v.$black;
+    position: absolute;
+    top: -0.8125rem;
+    left: 0.8125rem;
+  }
+}
+
+.quoteAvtor {
+  border-right: 0.0625rem solid v.$grey;
+  border-left: 0.0625rem solid v.$grey;
+  border-bottom: 0.0625rem solid v.$grey;
+  padding: 1rem;
+  font-size: 1.5rem;
+  line-height: f.ratio(24, 31.49);
+  color: v.$white;
+}

@@ -1,74 +1,46 @@
 import React, { forwardRef, useContext } from 'react';
-import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import { ReactComponent as Logo } from '../../assets/icons/LogoAL.svg';
 import { MyContext } from '../Context';
+import LogoLira from '../LogoLira';
 import styles from './Header.module.scss';
-
-const Wrapper = styled.div`
-  cursor: pointer;
-  
-  &:hover{
-    #fill{
-      fill:#fff;
-    }
-    p{
-      color: #fff;
-    }
-  }
-
-  #fill{
-    fill:#abb2bf;
-  }
-
-  .name{
-    text-align: center;
-  }
-
-  p{
-    color: #abb2bf;
-    font-weight: 700;
-  }
-`;
 
 const animation = {
   hidden: {
     x: '100%',
-    scale: 0.3
+    scale: 0.3,
   },
   visible: {
     x: 0,
     scale: 1,
-    transition: { duration: 0.4 }
+    transition: { duration: 0.4 },
   },
   exit: {
-    x: '100%'
-  }
+    x: '100%',
+  },
 };
 
-const setActive = ({ isActive }) => isActive ? 'active-header' : '';
+const setActive = ({ isActive }) => (isActive ? 'active-header' : '');
 
 export default function Header() {
-
   const { openMenu, setOpenMenu } = useContext(MyContext);
 
   const closeMenuClick = () => {
-    setOpenMenu(false)
-  }
+    setOpenMenu(false);
+  };
 
   const closeMenuKey = (e) => {
-    if (e.type === "keydown" && e.key === "Enter") {
-      setOpenMenu(false)
+    if (e.type === 'keydown' && e.key === 'Enter') {
+      setOpenMenu(false);
     }
-  }
+  };
 
   const managementMenuKey = (e) => {
-    if (e.type === "keydown" && e.key === "Enter") {
-      setOpenMenu(!openMenu)
+    if (e.type === 'keydown' && e.key === 'Enter') {
+      setOpenMenu(!openMenu);
     }
-  }
+  };
 
   return (
     <header className={styles.header}>
@@ -77,20 +49,26 @@ export default function Header() {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className={styles.container}>
-          <Wrapper>
-            <Link to="/" className={styles.logo}>
-              <Logo />
-              <div className="name">
-                <p>Lira</p>
-                <p>Artem</p>
-              </div>
-            </Link>
-          </Wrapper>
+          className={styles.container}
+        >
+          <LogoLira />
           {
             !openMenu
-              ? <Menu openMenu={openMenu} closeMenuClick={closeMenuClick} closeMenuKey={closeMenuKey} />
-              : <MMenu variants={animation} openMenu={openMenu} closeMenuClick={closeMenuClick} closeMenuKey={closeMenuKey} />
+              ? (
+                <Menu
+                  openMenu={openMenu}
+                  closeMenuClick={closeMenuClick}
+                  closeMenuKey={closeMenuKey}
+                />
+              )
+              : (
+                <MMenu
+                  variants={animation}
+                  openMenu={openMenu}
+                  closeMenuClick={closeMenuClick}
+                  closeMenuKey={closeMenuKey}
+                />
+              )
           }
           <div
             role="button"
@@ -109,7 +87,7 @@ export default function Header() {
 
 const Menu = forwardRef(({ openMenu, closeMenuClick, closeMenuKey }, ref) => (
   <div className={!openMenu ? `${styles.navWrapper}` : `${styles.navWrapper} ${styles.active}`} ref={ref}>
-    <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`} >
+    <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
           <NavLink
@@ -157,12 +135,12 @@ const Menu = forwardRef(({ openMenu, closeMenuClick, closeMenuKey }, ref) => (
         </li>
       </ul>
       <select className={styles.language} name="lang">
-        <option value="eng">eng</option>
+        <option value="en">en</option>
         <option value="ua">ua</option>
       </select>
     </nav>
   </div>
-))
+));
 
 Menu.propTypes = {
   openMenu: PropTypes.bool.isRequired,
