@@ -17,4 +17,5 @@ export default function Context({ children }) {
 
 Context.propTypes = {
   children: PropTypes.arrayOf(PropTypes.shape()).isRequired
-};
+}
+

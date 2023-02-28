@@ -2,7 +2,6 @@ import React, { forwardRef, useContext } from 'react';
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { motion } from 'framer-motion';
 import { ReactComponent as Logo } from '../../assets/icons/LogoAL.svg';
 import { MyContext } from '../Context';

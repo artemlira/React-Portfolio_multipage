@@ -4,10 +4,10 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    "prettier",
     'plugin:react/recommended',
     'airbnb',
     'plugin:react-hooks/recommended',
-    "prettier"
   ],
   overrides: [
   ],
@@ -37,5 +37,5 @@ module.exports = {
       }
     ]
   },
-      ignorePatterns: [".eslintrc.cjs", "postcss.config.js", "vite.config.js"],
+  ignorePatterns: [".eslintrc.cjs", "postcss.config.js", "vite.config.js"],
 };
