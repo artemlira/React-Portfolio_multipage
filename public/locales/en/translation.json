@@ -1,4 +1,8 @@
 {
+  "header_home": "home",
+  "header_projects": "projects",
+  "header_about": "about-me",
+  "header_contacts": "contacts",
   "hero_title": "Artem Lira is a ",
   "hero_title_span": "front-end developer",
   "hero_text": "He crafts responsive websites where technologies meet creativity",

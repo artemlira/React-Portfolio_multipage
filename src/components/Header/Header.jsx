@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
@@ -26,8 +26,8 @@ const setActive = ({ isActive }) => (isActive ? 'active-header' : '');
 
 export default function Header() {
   const { openMenu, setOpenMenu } = useContext(MyContext);
-  const { i18n } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  const [lang] = useState(i18n.language);
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -66,6 +66,8 @@ export default function Header() {
                   closeMenuClick={closeMenuClick}
                   closeMenuKey={closeMenuKey}
                   changeLanguage={changeLanguage}
+                  t={t}
+                  lang={lang}
                 />
               )
               : (
@@ -75,6 +77,8 @@ export default function Header() {
                   closeMenuClick={closeMenuClick}
                   closeMenuKey={closeMenuKey}
                   changeLanguage={changeLanguage}
+                  t={t}
+                  lang={lang}
                 />
               )
           }
@@ -94,7 +98,7 @@ export default function Header() {
 }
 
 const Menu = forwardRef(({
-  openMenu, closeMenuClick, closeMenuKey, changeLanguage,
+  openMenu, closeMenuClick, closeMenuKey, changeLanguage, t, lang,
 }, ref) => (
   <div className={!openMenu ? `${styles.navWrapper}` : `${styles.navWrapper} ${styles.active}`} ref={ref}>
     <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`}>
@@ -107,7 +111,7 @@ const Menu = forwardRef(({
             onKeyDown={(e) => closeMenuKey(e)}
           >
             <span>#</span>
-            home
+            {t('header_home')}
           </NavLink>
         </li>
         <li className={styles.navItem}>
@@ -118,7 +122,7 @@ const Menu = forwardRef(({
             onKeyDown={(e) => closeMenuKey(e)}
           >
             <span>#</span>
-            projects
+            {t('header_projects')}
           </NavLink>
         </li>
         <li className={styles.navItem}>
@@ -129,7 +133,7 @@ const Menu = forwardRef(({
             onKeyDown={(e) => closeMenuKey(e)}
           >
             <span>#</span>
-            about-me
+            {t('header_about')}
           </NavLink>
         </li>
         <li className={styles.navItem}>
@@ -140,16 +144,19 @@ const Menu = forwardRef(({
             onKeyDown={(e) => closeMenuKey(e)}
           >
             <span>#</span>
-            contacts
+            {t('header_contacts')}
           </NavLink>
         </li>
       </ul>
-      <button type="button" onClick={() => changeLanguage('en')}>en</button>
-      <button type="button" onClick={() => changeLanguage('ua')}>ua</button>
-      {/* <select className={styles.language} name="lang">
-        <option value="en" onClick={() => changeLanguage('en')}>en</option>
-        <option value="ua" onClick={() => changeLanguage('ua')}>ua</option>
-      </select> */}
+      <select
+        defaultValue={lang}
+        onChange={(e) => { changeLanguage(e.target.value); }}
+        className={styles.language}
+        name="lang"
+      >
+        <option value="en">en</option>
+        <option value="ua">ua</option>
+      </select>
     </nav>
   </div>
 ));
@@ -159,6 +166,8 @@ Menu.propTypes = {
   closeMenuClick: PropTypes.func.isRequired,
   closeMenuKey: PropTypes.func.isRequired,
   changeLanguage: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
+  lang: PropTypes.string.isRequired,
 };
 
 const MMenu = motion(Menu);
