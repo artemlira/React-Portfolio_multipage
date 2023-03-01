@@ -2,7 +2,6 @@ import React, { forwardRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { useTranslation } from 'react-i18next';
 import { MyContext } from '../Context';
 import LogoLira from '../LogoLira';

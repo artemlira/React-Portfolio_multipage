@@ -1,4 +1,10 @@
 {
-  "test": "translate in English",
-  "title":"He crafts responsive websites where technologies meet creativity"
+  "hero_title": "Artem Lira is a ",
+  "hero_title_span": "front-end developer",
+  "hero_text": "He crafts responsive websites where technologies meet creativity",
+  "hero_link": "Contact me!!",
+  "hero_imageText": "Currently working on",
+  "hero_spanText": "Portfolio",
+  "hero_quoteText": "With great power comes great electricity bill",
+  "hero_quoteAvtor": "- Dr. Who"
 }

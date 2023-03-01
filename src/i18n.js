@@ -1,10 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import i18n from "i18next";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Backend from "i18next-http-backend";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { initReactI18next } from "react-i18next";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import LanguageDetector from "i18next-browser-languagedetector";
 
 i18n

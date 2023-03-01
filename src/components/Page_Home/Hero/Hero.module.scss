@@ -2,6 +2,15 @@
 @use '../../../styles/mixins.scss' as m;
 @use '../../../styles/functions.scss' as f;
 
+.hero {
+  background: url('../../../assets/images/Home_Hero/bgRectangle.svg') right bottom 120px / 91px 91px no-repeat;
+  padding-bottom: 4.625rem;
+
+  @include m.netbook {
+    background: none;
+  }
+}
+
 .wrapperContent {
   display: flex;
   gap: 1.125rem;
