@@ -2,6 +2,8 @@ import React, { forwardRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useTranslation } from 'react-i18next';
 import { MyContext } from '../Context';
 import LogoLira from '../LogoLira';
 import styles from './Header.module.scss';
@@ -25,6 +27,11 @@ const setActive = ({ isActive }) => (isActive ? 'active-header' : '');
 
 export default function Header() {
   const { openMenu, setOpenMenu } = useContext(MyContext);
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   const closeMenuClick = () => {
     setOpenMenu(false);
@@ -59,6 +66,7 @@ export default function Header() {
                   openMenu={openMenu}
                   closeMenuClick={closeMenuClick}
                   closeMenuKey={closeMenuKey}
+                  changeLanguage={changeLanguage}
                 />
               )
               : (
@@ -67,6 +75,7 @@ export default function Header() {
                   openMenu={openMenu}
                   closeMenuClick={closeMenuClick}
                   closeMenuKey={closeMenuKey}
+                  changeLanguage={changeLanguage}
                 />
               )
           }
@@ -85,7 +94,9 @@ export default function Header() {
   );
 }
 
-const Menu = forwardRef(({ openMenu, closeMenuClick, closeMenuKey }, ref) => (
+const Menu = forwardRef(({
+  openMenu, closeMenuClick, closeMenuKey, changeLanguage,
+}, ref) => (
   <div className={!openMenu ? `${styles.navWrapper}` : `${styles.navWrapper} ${styles.active}`} ref={ref}>
     <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`}>
       <ul className={styles.navList}>
@@ -134,10 +145,12 @@ const Menu = forwardRef(({ openMenu, closeMenuClick, closeMenuKey }, ref) => (
           </NavLink>
         </li>
       </ul>
-      <select className={styles.language} name="lang">
-        <option value="en">en</option>
-        <option value="ua">ua</option>
-      </select>
+      <button type="button" onClick={() => changeLanguage('en')}>en</button>
+      <button type="button" onClick={() => changeLanguage('ua')}>ua</button>
+      {/* <select className={styles.language} name="lang">
+        <option value="en" onClick={() => changeLanguage('en')}>en</option>
+        <option value="ua" onClick={() => changeLanguage('ua')}>ua</option>
+      </select> */}
     </nav>
   </div>
 ));
@@ -146,6 +159,7 @@ Menu.propTypes = {
   openMenu: PropTypes.bool.isRequired,
   closeMenuClick: PropTypes.func.isRequired,
   closeMenuKey: PropTypes.func.isRequired,
+  changeLanguage: PropTypes.func.isRequired,
 };
 
 const MMenu = motion(Menu);

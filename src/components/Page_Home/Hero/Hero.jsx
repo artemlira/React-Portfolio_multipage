@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useTranslation } from 'react-i18next';
 import styles from './Hero.module.scss';
 
 function Hero() {
+  const { t } = useTranslation();
   return (
     <section className={styles.hero}>
       <div className="container">
@@ -14,7 +17,8 @@ function Hero() {
                 <span> front-end developer</span>
               </h2>
               <p className={styles.text}>
-                He crafts responsive websites where technologies meet creativity
+                {t('title')}
+                {/* He crafts responsive websites where technologies meet creativity */}
               </p>
               <Link className={styles.link} to="contacts">Contact me!!</Link>
             </div>
