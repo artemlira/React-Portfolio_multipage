@@ -1,0 +1,129 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.projects {
+  padding-bottom: 106px;
+}
+
+.container {}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 48px;
+  }
+}
+
+.title {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 38vw;
+    height: 1px;
+    background-color: v.$purple;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 190px;
+  }
+
+  span,
+  h2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: f.ratio(32, 42);
+    color: v.$purple;
+  }
+
+  h2 {
+    color: v.$white;
+  }
+}
+
+.link {
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: f.ratio(16, 21);
+    color: v.$white;
+
+    &:hover {
+      color: v.$purple;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  max-width: 100%;
+  gap: 16px;
+}
+
+.card {
+  min-height: 390px;
+  border: 1px solid v.$grey;
+  flex: 0 1 33.33%;
+  // flex: 0 1 auto;
+  flex-wrap: wrap;
+}
+
+.cardImage {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.cardSkills {
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid v.$grey;
+  border-bottom: 1px solid v.$grey;
+}
+
+.content {
+  max-height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: f.ratio(24, 31);
+  color: v.$white;
+  flex: 0 0 auto;
+}
+
+.cardDescription {
+  flex: 1 0 auto;
+}
+
+.cardLinks {
+  border: 5px solid tomato;
+  display: flex;
+  justify-content: space-evenly;
+  flex: 0 0 auto;
+}
+
+.deploy,
+.git {
+  padding: 8px 16px;
+  border: 1px solid v.$grey;
+}
+
+.git {}
