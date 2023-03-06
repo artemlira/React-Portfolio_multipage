@@ -16,12 +16,12 @@ export const projects = [
     deploy: 'https://react-gericht-multipage.netlify.app/',
   },
   {
-    id: 1,
+    id: 2,
     // img: GerichtImg,
     img: '../assets/images/Home_Projects/Gericht _1.png',
     // imgWebp: GerichtWebp,
     imgWebp: '../assets/images/Home_Projects/gericht-1.webp',
-    skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'React', 'JavaScript', 'SCSS', 'HTML', 'CSS'],
+    skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS'],
     title: 'Gerich',
     shortDescription: 'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів.',
     fullDescription: 'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів. Застосунок написано з використанням фреймворка Реакт, у якому застосовувалося: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components тощо.',
@@ -29,7 +29,7 @@ export const projects = [
     deploy: 'https://react-gericht-multipage.netlify.app/',
   },
   {
-    id: 1,
+    id: 3,
     // img: GerichtImg,
     img: '../assets/images/Home_Projects/Gericht _1.png',
     // imgWebp: GerichtWebp,
@@ -42,7 +42,7 @@ export const projects = [
     deploy: 'https://react-gericht-multipage.netlify.app/',
   },
   {
-    id: 1,
+    id: 4,
     // img: GerichtImg,
     img: '../assets/images/Home_Projects/Gericht _1.png',
     // imgWebp: GerichtWebp,

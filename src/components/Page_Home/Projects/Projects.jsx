@@ -1,12 +1,14 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { projects } from '../../DBFile';
+// import { projects } from '../../DBFile';
+import { MyContext } from '../../Context';
 import styles from './Projects.module.scss';
 
 function Projects() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { dataDB } = useContext(MyContext);
   return (
     <section className={styles.projects}>
       <div className="container">
@@ -23,14 +25,14 @@ function Projects() {
             </div>
           </div>
           <div className={styles.cards}>
-            {projects.map((project, index) => (
+            {dataDB.projects.completeApps.map((project, index) => (
               index < 3 && (
                 <Card
                   key={project.id}
                   img={project.img}
                   skills={project.skills}
                   title={project.title}
-                  text={project.shortDescription}
+                  text={i18n.language === 'en' ? project.shortDescriptionEN : project.shortDescriptionUA}
                   git={project.git}
                   deploy={project.deploy}
                 />
@@ -51,7 +53,9 @@ const Card = forwardRef(({
       <img src={img} alt="njklk" />
     </div>
     <div className={styles.cardSkills}>
-      {skills.map((skill) => <span>{skill}</span>)}
+      {
+        skills.map((skill) => <span key={skill}>{skill}</span>)
+      }
     </div>
     <div className={styles.content}>
       <div className={styles.cardTitle}>

@@ -3,10 +3,9 @@
 @use '../../../styles/functions.scss' as f;
 
 .projects {
-  padding-bottom: 106px;
+  padding-bottom: 6.625rem;
+  background: url('../../../assets/images/Home_Projects/bg.svg')left 0rem top 4.0625rem / 2.125rem 5.25rem no-repeat;
 }
-
-.container {}
 
 .label {
   display: flex;
@@ -14,7 +13,12 @@
   align-items: center;
 
   &:not(:last-child) {
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
+  }
+
+  @include m.phone {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -25,18 +29,22 @@
     content: '';
     display: inline-block;
     width: 38vw;
-    height: 1px;
+    height: 0.0625rem;
     background-color: v.$purple;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 190px;
+    left: 11.875rem;
+
+    @media screen and (max-width:600px) {
+      width: 28vw;
+    }
   }
 
   span,
   h2 {
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: f.ratio(32, 42);
     color: v.$purple;
   }
@@ -49,7 +57,7 @@
 .link {
   a {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: f.ratio(16, 21);
     color: v.$white;
 
@@ -62,15 +70,27 @@
 .cards {
   display: flex;
   max-width: 100%;
-  gap: 16px;
+  gap: 1rem;
+
+  @include m.netbook {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .card {
-  min-height: 390px;
-  border: 1px solid v.$grey;
+  min-height: 24.375rem;
+  border: 0.0625rem solid v.$grey;
   flex: 0 1 33.33%;
-  // flex: 0 1 auto;
   flex-wrap: wrap;
+
+  @include m.netbook {
+    flex: 0 0 20.625rem;
+  }
+
+  @include m.phone {
+    flex: 0 1 100%;
+  }
 }
 
 .cardImage {
@@ -78,24 +98,24 @@
 
   img {
     width: 100%;
-    max-height: 200px;
+    max-height: 12.5rem;
     object-fit: cover;
     object-position: top;
   }
 }
 
 .cardSkills {
-  padding: 8px;
+  padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  border-top: 1px solid v.$grey;
-  border-bottom: 1px solid v.$grey;
+  gap: 0.5rem;
+  border-top: 0.0625rem solid v.$grey;
+  border-bottom: 0.0625rem solid v.$grey;
 }
 
 .content {
   max-height: 100%;
-  padding: 16px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -103,7 +123,7 @@
 
 .cardTitle {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: f.ratio(24, 31);
   color: v.$white;
   flex: 0 0 auto;
@@ -114,7 +134,6 @@
 }
 
 .cardLinks {
-  border: 5px solid tomato;
   display: flex;
   justify-content: space-evenly;
   flex: 0 0 auto;
@@ -122,8 +141,13 @@
 
 .deploy,
 .git {
-  padding: 8px 16px;
-  border: 1px solid v.$grey;
-}
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid v.$grey;
+  transition: all 0.3s;
 
-.git {}
+  &:hover {
+    border: 0.0625rem solid v.$white;
+    background-color: v.$purple;
+    color: v.$white;
+  }
+}
