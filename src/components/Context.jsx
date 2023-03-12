@@ -1,32 +1,36 @@
 import React, { useState, createContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import axios from 'axios';
-import DB from '../../db.json';
+// import axios from 'axios'; // Connecting data via a server
+import DB from '../../db.json'; // to connect from a local file, not through a server
 
 export const MyContext = createContext();
 
 export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
-  const [dataDB] = useState(DB.portfolio);
-  // const url = 'https://www.googleapis.com/drive.google.com/file/d/13oFNm66uVZxF6XgQNAWFAadQYig9yV4P/view?usp=sharing';
-  // const url = 'https://jsonplaceholder.typicode.com/users';
+  const [dataDB] = useState(DB.portfolio); // to connect from a local file, not through a server
+  const { skills, media } = dataDB;
 
-  // axios({
-  //   method: 'get',
-  //   url,
-  //   responseType: 'string',
-  // }).then((response) => console.log(response))
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
+  // const [dataDB, setDataDB] = useState(null); // Connecting data via a server
+  // useEffect(() => {
+  //   const url = 'http://localhost:3001/';
+  //   axios.get(url)
+  //     .then((response) => {
+  //       const data = response.data.portfolio;
+  //       setDataDB(data);
+  //     })
+  //     .catch((error) => {
+  //       // eslint-disable-next-line no-console
+  //       console.error(error);
+  //     });
+  // }, []);
 
-  // const data = JSON.parse(DB);
   const value = useMemo(() => ({
     openMenu,
     setOpenMenu,
     dataDB,
-  }), [openMenu, setOpenMenu, dataDB]);
+    skills,
+    media,
+  }), [openMenu, setOpenMenu, dataDB, skills, media]);
 
   return (
     <MyContext.Provider value={value}>{children}</MyContext.Provider>

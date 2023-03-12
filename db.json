@@ -66,26 +66,57 @@
     "skills": [
       {
         "id": 1,
-        "value": "HTML"
+        "category": "Languages",
+        "value": [
+          "JavaScript"
+        ]
       },
       {
-        "id": 1,
-        "value": "CSS"
+        "id": 2,
+        "category": "Databases",
+        "value": [
+          "MongoDB",
+          "Firebase",
+          "Netlify"
+        ]
       },
       {
-        "id": 1,
-        "value": "SASS"
+        "id": 3,
+        "category": "Other",
+        "value": [
+          "HTML",
+          "CSS",
+          "SASS/SCSS"
+        ]
       },
       {
-        "id": 1,
-        "value": "JavaScript"
+        "id": 4,
+        "category": "Frameworks",
+        "value": [
+          "React.js",
+          "Express.js"
+        ]
       },
       {
-        "id": 1,
-        "value": "React.js"
+        "id": 5,
+        "category": "Tools",
+        "value": [
+          "VSCode",
+          "Figma",
+          "Font Awesome",
+          "Git",
+          "Framer Motion",
+          "Slick-Slider",
+          "Swiper Slider",
+          "Animate animated",
+          "Bootstrap",
+          "Styled components",
+          "Vite",
+          "Webpack",
+          "Gulp"
+        ]
       }
     ],
-    "libraries": [],
     "media": [
       {
         "id": 1,

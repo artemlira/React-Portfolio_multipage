@@ -2,7 +2,6 @@ import React, { forwardRef, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-// import { projects } from '../../DBFile';
 import { MyContext } from '../../Context';
 import styles from './Projects.module.scss';
 
@@ -21,11 +20,15 @@ function Projects() {
               </h2>
             </div>
             <div className={styles.link}>
-              <Link to="projects">View all ~~&gt;</Link>
+              <Link to="projects">
+                {t('projects_link')}
+                {' '}
+                ~~&gt;
+              </Link>
             </div>
           </div>
           <div className={styles.cards}>
-            {dataDB.projects.completeApps.map((project, index) => (
+            {dataDB?.projects?.completeApps.map((project, index) => (
               index < 3 && (
                 <Card
                   key={project.id}

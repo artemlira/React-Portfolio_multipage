@@ -11,5 +11,7 @@
   "hero_spanText": "Portfolio",
   "hero_quoteText": "With great power comes great electricity bill",
   "hero_quoteAvtor": "- Dr. Who",
-  "projects_title": "projects"
+  "projects_title": "projects",
+  "projects_link": "View all",
+  "skills_title": "skills"
 }
