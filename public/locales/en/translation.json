@@ -5,13 +5,18 @@
   "header_contacts": "contacts",
   "hero_title": "Artem Lira is a ",
   "hero_title_span": "front-end developer",
-  "hero_text": "He crafts responsive websites where technologies meet creativity",
+  "hero_text": "Which creates high-quality, functional and aesthetically pleasing websites using cutting-edge technology and appropriate standards",
   "hero_link": "Contact me!!",
   "hero_imageText": "Currently working on",
   "hero_spanText": "Portfolio",
-  "hero_quoteText": "With great power comes great electricity bill",
-  "hero_quoteAvtor": "- Dr. Who",
+  "hero_quoteText": "I don't forget my mistakes, I use them to my advantage.",
+  "hero_quoteAvtor": "- Albert Einstein",
   "projects_title": "projects",
   "projects_link": "View all",
-  "skills_title": "skills"
+  "skills_title": "skills",
+  "about_title": "about-me",
+  "about_link": "Read more ->",
+  "about_label": "Hello, i’m Artem Lira!",
+  "about_aboutMe": "I’m a front-end developer from in Zaporizhzhya, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+  "about_text": "Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks."
 }

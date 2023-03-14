@@ -5,7 +5,7 @@ import { MyContext } from '../../Context';
 import styles from './Skills.module.scss';
 
 function Skills() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { skills } = useContext(MyContext);
   return (
     <section className={styles.skills}>
@@ -16,7 +16,13 @@ function Skills() {
         </h2>
         <div className={styles.container}>
           <div className={styles.content}>
-            {skills.map((item) => <Skill key={item.id} title={item.category} text={item.value} />)}
+            {skills.map((item) => (
+              <Skill
+                key={item.id}
+                title={i18n.language === 'en' ? item.categoryEN : item.categoryUA}
+                text={item.value}
+              />
+            ))}
           </div>
         </div>
       </div>

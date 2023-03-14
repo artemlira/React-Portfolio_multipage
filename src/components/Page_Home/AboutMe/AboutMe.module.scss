@@ -1,0 +1,84 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.aboutMe {
+  padding-bottom: 7rem;
+}
+
+.container {
+  display: flex;
+  @include m.adaptiv-value('column-gap', 166, -100, 1);
+
+  @include m.tablet {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: f.ratio(32, 42);
+  color: v.$white;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 1.4375rem;
+  }
+
+  span {
+    color: v.$purple;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24vw;
+    height: 0.0625rem;
+    background-color: v.$purple;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 11.875rem;
+  }
+}
+
+.content {
+  flex: 0 1 32.1875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6875rem;
+  line-height: f.ratio(16, 26);
+  padding-bottom: 4.125rem;
+
+  @include m.tablet {
+    flex: auto;
+  }
+}
+
+.link {
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid v.$purple;
+  color: v.$white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  max-width: 170px;
+
+  &:hover {
+    background-color: v.$purple;
+  }
+}
+
+.image {
+  border-bottom: 0.0625rem solid v.$purple;
+  flex: 0 0 21.4375rem;
+  background: url('../../../assets/images/Home_About/decor_small.svg') right 1rem top 15.625rem / 6.5rem 3.5rem no-repeat,
+    url('../../../assets/images/Home_Skills/decor.svg') left top 3.125rem / 5.25rem 5.25rem no-repeat,
+    url('../../../assets/images/Home_About/bg.png') right bottom / contain no-repeat;
+
+  @include m.tablet {
+    background: url('../../../assets/images/Home_About/decor_small.svg') right 1rem top 15.625rem / 6.5rem 3.5rem no-repeat,
+      url('../../../assets/images/Home_Skills/decor.svg') right 11.25rem top 3.125rem / 5.25rem 5.25rem no-repeat,
+      url('../../../assets/images/Home_About/bg.png') right bottom / contain no-repeat;
+  }
+}

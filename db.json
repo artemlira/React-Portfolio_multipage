@@ -66,14 +66,16 @@
     "skills": [
       {
         "id": 1,
-        "category": "Languages",
+        "categoryEN": "Languages",
+        "categoryUA": "Мови програмування",
         "value": [
           "JavaScript"
         ]
       },
       {
         "id": 2,
-        "category": "Databases",
+        "categoryEN": "Databases",
+        "categoryUA": "Бази даних",
         "value": [
           "MongoDB",
           "Firebase",
@@ -82,16 +84,20 @@
       },
       {
         "id": 3,
-        "category": "Other",
+        "categoryEN": "Other",
+        "categoryUA": "Інше",
         "value": [
           "HTML",
           "CSS",
-          "SASS/SCSS"
+          "SASS/SCSS",
+          "Fetch",
+          "Axios"
         ]
       },
       {
         "id": 4,
-        "category": "Frameworks",
+        "categoryEN": "Frameworks",
+        "categoryUA": "Фреймворки",
         "value": [
           "React.js",
           "Express.js"
@@ -99,7 +105,8 @@
       },
       {
         "id": 5,
-        "category": "Tools",
+        "categoryEN": "Tools",
+        "categoryUA": "Інструменти",
         "value": [
           "VSCode",
           "Figma",
