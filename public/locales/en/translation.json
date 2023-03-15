@@ -25,5 +25,6 @@
   "contacts_inputEmail": "Email",
   "contacts_inputTitle": "Title",
   "contacts_message": "Message",
-  "contacts_button": "Send"
+  "contacts_button": "Send",
+  "contacts_formTitle": "Message me here"
 }

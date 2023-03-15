@@ -3,10 +3,29 @@
 @use '../../../styles/functions.scss' as f;
 
 .contacts {
-  padding-bottom: 145px;
+  padding-bottom: 9.0625rem;
+  background: url('../../../assets/images/Home_Projects/bg.svg')left -1.25rem top 6.25rem / 6.4375rem 6.4375rem no-repeat;
+
+  @include m.laptop {
+    background: initial;
+  }
+
+  @include m.phone {
+    padding-bottom: 2.8125rem;
+  }
 }
 
-.container {}
+.container {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+
+  @include m.tablet {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
 
 .title {
   font-weight: 500;
@@ -35,24 +54,91 @@
   }
 }
 
-.content {}
+.content {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-.text {}
+.telegram,
+.email {
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
 
-.telegram {}
+  &:hover {
+    color: v.$white;
 
-.email {}
+    svg * {
+      fill: v.$white;
+    }
+  }
+}
 
-.form {}
+.form {
+  flex: 0 1 40%;
+  border: 0.0625rem solid v.$grey;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
 
-.label {}
+  @include m.tablet {
+    flex: initial;
+    width: 100%;
+  }
+}
 
-.inputName {}
+.formTitle {
+  color: v.$white;
+  text-align: center;
+}
 
-.inputEmail {}
+.label {
+  display: flex;
+  gap: 0.5rem;
 
-.inputTitle {}
+  @include m.phone {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 
-.message {}
+.inputName,
+.inputEmail,
+.inputTitle,
+.message {
+  height: 2.3125rem;
+  background-color: transparent;
+  border: 0.0625rem solid v.$grey;
+  padding: 0.5rem;
+  color: v.$white;
+}
 
-.button {}
+.inputName,
+.inputEmail {
+  flex: 1 1 50%;
+
+  @include m.phone {
+    flex: initial;
+  }
+}
+
+.message {
+  height: 6.25rem;
+}
+
+.button {
+  border: 0.0625rem solid v.$purple;
+  padding: 0.5rem 1rem;
+  color: v.$white;
+  max-width: 9.375rem;
+  margin-inline: auto;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: v.$purple;
+    border: 0.0625rem solid v.$grey;
+  }
+}
