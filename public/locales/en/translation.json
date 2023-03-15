@@ -18,5 +18,12 @@
   "about_link": "Read more ->",
   "about_label": "Hello, i’m Artem Lira!",
   "about_aboutMe": "I’m a front-end developer from in Zaporizhzhya, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
-  "about_text": "Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks."
+  "about_text": "Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.",
+  "contacts_title": "contacts",
+  "contacts_text": "I am looking for development opportunities in an IT company or freelance projects. I am ready to work on new challenges and projects. Are you interested in cooperation? Contact me",
+  "contacts_inputName": "Name",
+  "contacts_inputEmail": "Email",
+  "contacts_inputTitle": "Title",
+  "contacts_message": "Message",
+  "contacts_button": "Send"
 }

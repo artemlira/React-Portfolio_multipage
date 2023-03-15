@@ -4,11 +4,9 @@ import { ReactComponent as LinkedIn } from '../../assets/icons/LinkedLn.svg';
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
 import { ReactComponent as Git } from '../../assets/icons/Git.svg';
 import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
-// import { MyContext } from '../Context';
 import styles from './Footer.module.scss';
 
 function Footer() {
-  // const { dataDB } = useContext(MyContext);
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -24,13 +22,6 @@ function Footer() {
             <div className={styles.media}>
               <h3 className={styles.title}>Media</h3>
               <div className={styles.icons}>
-                {/* {
-                  dataDB.media.map((media) => (
-                    <a key={media.name} href={media.link} target="_blank" rel="noreferrer">
-                      <Icon icon={media.name} key={media.name} />
-                    </a>
-                  ))
-                } */}
                 <a href="https://github.com/artemlira" target="_blank" rel="noreferrer">
                   <Git />
                 </a>
@@ -54,12 +45,5 @@ function Footer() {
     </footer>
   );
 }
-
-// function Icon({ icon }) {
-//   return (
-//     <div>{icon}</div>
-//     // { icon }
-//   );
-// }
 
 export default Footer;

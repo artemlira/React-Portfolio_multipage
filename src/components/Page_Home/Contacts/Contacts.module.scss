@@ -1,0 +1,58 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.contacts {
+  padding-bottom: 145px;
+}
+
+.container {}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: f.ratio(32, 42);
+  color: v.$white;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 1.4375rem;
+  }
+
+  span {
+    color: v.$purple;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 10vw;
+    height: 0.0625rem;
+    background-color: v.$purple;
+    position: absolute;
+    top: 50%;
+    transform: translate(16px, -50%);
+  }
+}
+
+.content {}
+
+.text {}
+
+.telegram {}
+
+.email {}
+
+.form {}
+
+.label {}
+
+.inputName {}
+
+.inputEmail {}
+
+.inputTitle {}
+
+.message {}
+
+.button {}

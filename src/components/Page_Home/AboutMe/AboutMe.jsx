@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import styles from './AboutMe.module.scss';
@@ -26,9 +25,5 @@ function AboutMe() {
     </section>
   );
 }
-
-// AboutMe.propTypes = {
-//   props: PropTypes.string.isRequired,
-// };
 
 export default AboutMe;
