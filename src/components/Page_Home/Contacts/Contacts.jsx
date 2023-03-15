@@ -29,6 +29,7 @@ function Contacts() {
             </div>
           </div>
           <form name="contacts" data-netlify="true" method="POST" className={styles.form}>
+            <input type="hidden" name="form-name" value="contacts" />
             <h4 className={styles.formTitle}>{t('contacts_formTitle')}</h4>
             <div className={styles.label}>
               <input type="text" className={styles.inputName} placeholder={t('contacts_inputName')} />
