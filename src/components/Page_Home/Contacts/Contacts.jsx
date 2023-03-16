@@ -28,15 +28,15 @@ function Contacts() {
               <a href="mailto:artemliradev@gmail.com">artemliradev@gmail.com</a>
             </div>
           </div>
-          <form name="contacts" data-netlify="true" method="POST" className={styles.form}>
+          <form name="contacts" method="POST" className={styles.form}>
             <input type="hidden" name="form-name" value="contacts" />
             <h4 className={styles.formTitle}>{t('contacts_formTitle')}</h4>
             <div className={styles.label}>
-              <input type="text" className={styles.inputName} placeholder={t('contacts_inputName')} />
-              <input type="text" className={styles.inputEmail} placeholder={t('contacts_inputEmail')} />
+              <input type="text" name="name" className={styles.inputName} placeholder={t('contacts_inputName')} />
+              <input type="email" name="email" className={styles.inputEmail} placeholder={t('contacts_inputEmail')} />
             </div>
-            <input type="text" className={styles.inputTitle} placeholder={t('contacts_inputTitle')} />
-            <input type="text" className={styles.message} placeholder={t('contacts_message')} />
+            <input type="text" name="title" className={styles.inputTitle} placeholder={t('contacts_inputTitle')} />
+            <input type="text" name="message" className={styles.message} placeholder={t('contacts_message')} />
             <button type="submit" className={styles.button}>{t('contacts_button')}</button>
           </form>
         </div>
