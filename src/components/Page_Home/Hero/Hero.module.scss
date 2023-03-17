@@ -3,7 +3,7 @@
 @use '../../../styles/functions.scss' as f;
 
 .hero {
-  background: url('../../../assets/images/Home_Hero/bgRectangle.svg') right bottom 120px / 91px 91px no-repeat;
+  background: url('../../../assets/images/Home_Hero/bgRectangle.svg') right bottom 7.5rem / 5.6875rem 5.6875rem no-repeat;
   padding-bottom: 4.625rem;
 
   @include m.netbook {
@@ -21,12 +21,20 @@
 
   @include m.phone {
     flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 3.125rem;
+    }
   }
 }
 
 .content {
   flex: 1 1 53%;
   padding-block: 4.625rem;
+
+  @include m.phone {
+    padding-block: 1.875rem;
+  }
 }
 
 .title {

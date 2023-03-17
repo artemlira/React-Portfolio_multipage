@@ -4,6 +4,10 @@
 
 .aboutMe {
   padding-bottom: 7rem;
+
+  @include m.phone {
+    padding-bottom: 3.125rem;
+  }
 }
 
 .container {
@@ -52,6 +56,10 @@
 
   @include m.tablet {
     flex: auto;
+  }
+
+  @include m.phone {
+    padding-bottom: 1.25rem;
   }
 }
 

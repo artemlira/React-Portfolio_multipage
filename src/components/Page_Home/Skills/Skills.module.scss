@@ -8,6 +8,11 @@
   @media screen and (max-width:768px) {
     background: url('../../../assets/icons/LogoALBG.svg') right 0px bottom 7px / 113px 113px no-repeat;
   }
+
+  @include m.phone {
+    padding-bottom: 3.125rem;
+    background: initial;
+  }
 }
 
 .title {

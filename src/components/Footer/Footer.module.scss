@@ -67,9 +67,10 @@
   gap: 0.875rem;
 
   a {
-    flex: 0 0 2rem;
-    height: 2rem;
+    flex: 0 0 32px;
+    height: 32px;
     padding: 0.3125rem;
+    transition: all 0.3s;
 
     &:hover {
       svg * {

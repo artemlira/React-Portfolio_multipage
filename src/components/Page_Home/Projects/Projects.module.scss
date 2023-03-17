@@ -5,6 +5,14 @@
 .projects {
   padding-bottom: 6.625rem;
   background: url('../../../assets/images/Home_Projects/bg.svg')left 0rem top 4.0625rem / 2.125rem 5.25rem no-repeat;
+
+  @include m.tablet {
+    background: initial;
+  }
+
+  @include m.phone {
+    padding-bottom: 3.125rem;
+  }
 }
 
 .label {
@@ -19,6 +27,7 @@
   @include m.phone {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.875rem;
   }
 }
 
@@ -36,9 +45,14 @@
     transform: translateY(-50%);
     left: 11.875rem;
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:700px) {
       width: 28vw;
     }
+
+    @media screen and (max-width:600px) {
+      width: 0;
+    }
+
   }
 
   span,

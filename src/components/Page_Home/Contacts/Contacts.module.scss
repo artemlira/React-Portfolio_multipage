@@ -67,6 +67,12 @@
   gap: 0.4375rem;
   align-items: center;
 
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: v.$grey;
+  }
+
   &:hover {
     color: v.$white;
 

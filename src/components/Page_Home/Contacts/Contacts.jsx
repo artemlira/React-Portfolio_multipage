@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { ReactComponent as Telegram } from '../../../assets/icons/Telegram.svg';
-import { ReactComponent as Email } from '../../../assets/icons/Mail.svg';
+import { MyContext } from '../../Context';
 import styles from './Contacts.module.scss';
 
 function Contacts() {
   const { t } = useTranslation();
+  const { contacts } = useContext(MyContext);
   return (
     <section className={styles.contacts}>
       <div className="container">
@@ -20,12 +20,12 @@ function Contacts() {
               {t('contacts_text')}
             </p>
             <div className={styles.telegram}>
-              <Telegram />
-              <a href="https://t.me/Artem_Lira" target="_blank" rel="noreferrer">@Artem_Lira</a>
+              {contacts[2].icon}
+              <a href={contacts[2].value} target="_blank" rel="noreferrer">@Artem_Lira</a>
             </div>
             <div className={styles.email}>
-              <Email />
-              <a href="mailto:artemliradev@gmail.com">artemliradev@gmail.com</a>
+              {contacts[1].icon}
+              <a href={`mailto:${contacts[1].value}`}>{contacts[1].value}</a>
             </div>
           </div>
           <form name="contacts" method="POST" className={styles.form}>
