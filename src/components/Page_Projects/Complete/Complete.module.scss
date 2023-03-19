@@ -1,0 +1,42 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.complete {
+  padding-bottom: 5.0625rem;
+  background: url('../../../assets/images/Home_Skills/decor.svg')left 1.875rem top 9.375rem / 3.0625rem 3.0625rem no-repeat,
+    url('../../../assets/images/Home_Skills/recBig.png')right -4.6875rem top 0rem / 9.6875rem 9.6875rem no-repeat;
+
+  @media screen and (max-width:1230px) {
+    background: initial;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @include m.netbook {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width:600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: f.ratio(32, 42);
+  color: v.$white;
+
+  span {
+    color: v.$purple;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

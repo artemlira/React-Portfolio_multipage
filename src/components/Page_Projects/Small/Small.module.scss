@@ -1,0 +1,47 @@
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins.scss' as m;
+@use '../../../styles/functions.scss' as f;
+
+.small {
+  padding-bottom: 11.6875rem;
+  background: url('../../../assets/images/Home_Skills/decor.svg')right -1.25rem top 3.125rem / 6.4375rem 6.4375rem no-repeat,
+    url('../../../assets/images/Home_Skills/decor.svg') left -2.5rem top 37.5rem / 6.4375rem 6.4375rem no-repeat,
+    url('../../../assets/images/Home_Skills/recBig.png')left -5rem top / 9.6875rem 9.6875rem no-repeat;
+
+  @media screen and (max-width:1230px) {
+    background: initial;
+  }
+
+  @include m.phone {
+    padding-bottom: 3.125rem;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @include m.netbook {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width:600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: f.ratio(32, 42);
+  color: v.$white;
+
+  span {
+    color: v.$purple;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

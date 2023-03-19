@@ -1,0 +1,26 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.pageTitle {
+  padding-block: 3.3125rem 4.25rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: f.ratio(32, 42);
+  color: v.$white;
+
+  span {
+    color: v.$purple;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.875rem;
+  }
+}
+
+.text {
+  color: v.$white;
+}

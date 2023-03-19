@@ -9,7 +9,9 @@ export const MyContext = createContext();
 export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
   const [dataDB] = useState(DB); // to connect from a local file, not through a server
-  const { skills, media, contacts } = dataDB;
+  const {
+    skills, media, contacts, projects,
+  } = dataDB;
 
   // const [dataDB, setDataDB] = useState(null); // Connecting data via a server
   // useEffect(() => {
@@ -32,7 +34,8 @@ export default function Context({ children }) {
     skills,
     media,
     contacts,
-  }), [openMenu, setOpenMenu, dataDB, skills, media, contacts]);
+    projects,
+  }), [openMenu, setOpenMenu, dataDB, skills, media, contacts, projects]);
 
   return (
     <MyContext.Provider value={value}>{children}</MyContext.Provider>

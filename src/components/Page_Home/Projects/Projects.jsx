@@ -49,7 +49,7 @@ function Projects() {
   );
 }
 
-const Card = forwardRef(({
+export const Card = forwardRef(({
   img, imgWebp, skills, title, text, git, deploy,
 }, ref) => (
   <div className={styles.card} ref={ref}>

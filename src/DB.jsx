@@ -4,10 +4,119 @@ import Millor from './assets/images/Home_Projects/Millor.jpg';
 import MillorWebp from './assets/images/Home_Projects/Millor.webp';
 import Haus from './assets/images/Home_Projects/Haus.jpg';
 import HausWebp from './assets/images/Home_Projects/Haus.webp';
+import TodoList from './assets/images/Home_Projects/todoList.jpg';
+import TodoListWebp from './assets/images/Home_Projects/todolist.webp';
+import Memory from './assets/images/Home_Projects/Memory.jpg';
+import MemoryWebp from './assets/images/Home_Projects/memory.webp';
+import Furniture from './assets/images/Home_Projects/furniture.jpg';
+import FurnitureWebp from './assets/images/Home_Projects/furniture.webp';
+import Restorant from './assets/images/Home_Projects/Restorant.jpg';
+import RestorantWebp from './assets/images/Home_Projects/restorant.webp';
+import Sudoky from './assets/images/Home_Projects/Sudoky.jpg';
+import SudokyWebp from './assets/images/Home_Projects/sudoky.webp';
+import TagGame from './assets/images/Home_Projects/TagGame.jpg';
+import TagGameWebp from './assets/images/Home_Projects/taggame.webp';
 
 const portfolio = {
   projects: {
-    smallProjects: [],
+    smallProjects: [
+      {
+        id: 1,
+        img: TodoList,
+        imgWebp: TodoListWebp,
+        title: 'Todo List',
+        skills: [
+          'React',
+          'JavaScript',
+          'SCSS',
+          'HTML',
+          'CSS',
+          'Firebase',
+        ],
+        shortDescriptionUA: 'Список справ',
+        shortDescriptionEN: 'List of references',
+        fullDescriptionUA: '',
+        fullDescriptionEN: '',
+        git: 'https://github.com/artemlira/todo-list_React.git',
+        deploy: 'https://my-todo-a5bd2.web.app/',
+      },
+      {
+        id: 2,
+        img: Furniture,
+        imgWebp: FurnitureWebp,
+        title: 'Furniture',
+        skills: [
+          'JavaScript',
+          'SCSS',
+          'HTML',
+          'CSS',
+          'Gulp',
+          'Animate-animated',
+        ],
+        shortDescriptionUA: 'Лендінг сайту меблевої компанії',
+        shortDescriptionEN: 'Landing page for a furniture company',
+        fullDescriptionUA: '',
+        fullDescriptionEN: '',
+        git: 'https://github.com/artemlira/Furniture.test.git',
+        deploy: 'https://draft-furniture-test.netlify.app/',
+      },
+      {
+        id: 3,
+        img: Restorant,
+        imgWebp: RestorantWebp,
+        title: 'Restorant',
+        skills: [
+          'JavaScript',
+          'SCSS',
+          'HTML',
+          'CSS',
+          'Gulp',
+          'Netlify',
+        ],
+        shortDescriptionUA: 'Лендінг сайту ресторану',
+        shortDescriptionEN: 'Landing page of a restaurant website',
+        fullDescriptionUA: '',
+        fullDescriptionEN: '',
+        git: 'https://github.com/artemlira/Restorant.git',
+        deploy: 'https://restorant-test.netlify.app/',
+      },
+      {
+        id: 4,
+        img: Sudoky,
+        imgWebp: SudokyWebp,
+        title: 'Sudoky',
+        skills: [
+          'JavaScript',
+          'HTML',
+          'CSS',
+          'Netlify',
+        ],
+        shortDescriptionUA: 'Дитяча гра Судоку',
+        shortDescriptionEN: 'Children`s game Sudoku',
+        fullDescriptionUA: 'Дитяча гра на розвивання логіки, ціль гри: розтавити малюнки таким чином, щоб вони не повторювались ні в горизонтальній лінії, ні в вертикальній.',
+        fullDescriptionEN: 'A children`s game for developing logic, the goal of the game is to arrange the drawings in such a way that they do not repeat either in the horizontal line or in the vertical.',
+        git: 'https://github.com/artemlira/SudokuGame.git',
+        deploy: 'https://sudoky-kids-game.netlify.app/',
+      },
+      {
+        id: 5,
+        img: TagGame,
+        imgWebp: TagGameWebp,
+        title: 'Tag Game',
+        skills: [
+          'JavaScript',
+          'HTML',
+          'CSS',
+          'Netlify',
+        ],
+        shortDescriptionUA: 'Гра в п`ятнашки',
+        shortDescriptionEN: 'G`s in spades',
+        fullDescriptionUA: 'Ціль гри розтавити всі кубики по зростанню від 1 до 15',
+        fullDescriptionEN: 'The purpose of the game is to melt all the cubes in ascending order from 1 to 15',
+        git: 'https://github.com/artemlira/tag_game.git',
+        deploy: 'https://childrens-play-tag.netlify.app/',
+      },
+    ],
     completeApps: [
       {
         id: 1,
@@ -52,7 +161,7 @@ const portfolio = {
         deploy: 'https://react-millor-layout.netlify.app/',
       },
       {
-        id: 3,
+        id: 4,
         img: Haus,
         imgWebp: HausWebp,
         title: 'Haus',
@@ -69,6 +178,27 @@ const portfolio = {
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/React-Millor_layout',
         deploy: 'https://hause-site.netlify.app/',
+      },
+      {
+        id: 5,
+        img: Memory,
+        imgWebp: MemoryWebp,
+        title: 'Memory Simulator',
+        skills: [
+          'React',
+          'JavaScript',
+          'SCSS',
+          'HTML',
+          'CSS',
+          'Framer-motion',
+          'Firebase',
+        ],
+        shortDescriptionUA: 'Дитяча гра для тренування пам`яті',
+        shortDescriptionEN: 'Children`s game for memory training',
+        fullDescriptionUA: '',
+        fullDescriptionEN: '',
+        git: 'https://github.com/artemlira/React-Memory_Simulator.git',
+        deploy: 'https://memory-simulator.web.app/',
       },
     ],
   },
