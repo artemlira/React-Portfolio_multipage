@@ -62,6 +62,7 @@ export default function Header() {
             !openMenu
               ? (
                 <Menu
+                  variants={animation}
                   openMenu={openMenu}
                   closeMenuClick={closeMenuClick}
                   closeMenuKey={closeMenuKey}

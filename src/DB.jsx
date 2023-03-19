@@ -1,6 +1,9 @@
-import Gericht from './assets/images/Home_Projects/Gericht _1.png';
-import Millor from './assets/images/Home_Projects/Millor01.jpg';
+import Gericht from './assets/images/Home_Projects/Gericht.png';
+import GerichtWebp from './assets/images/Home_Projects/Gericht.webp';
+import Millor from './assets/images/Home_Projects/Millor.jpg';
+import MillorWebp from './assets/images/Home_Projects/Millor.webp';
 import Haus from './assets/images/Home_Projects/Haus.jpg';
+import HausWebp from './assets/images/Home_Projects/Haus.webp';
 
 const portfolio = {
   projects: {
@@ -9,6 +12,7 @@ const portfolio = {
       {
         id: 1,
         img: Gericht,
+        imgWebp: GerichtWebp,
         title: 'Gericht',
         skills: [
           'React',
@@ -29,6 +33,7 @@ const portfolio = {
       {
         id: 2,
         img: Millor,
+        imgWebp: MillorWebp,
         title: 'Millor',
         skills: [
           'React',
@@ -49,6 +54,7 @@ const portfolio = {
       {
         id: 3,
         img: Haus,
+        imgWebp: HausWebp,
         title: 'Haus',
         skills: [
           'JavaScript',

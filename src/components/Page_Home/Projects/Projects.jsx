@@ -33,6 +33,7 @@ function Projects() {
                 <Card
                   key={project.id}
                   img={project.img}
+                  imgWebp={project.imgWebp}
                   skills={project.skills}
                   title={project.title}
                   text={i18n.language === 'en' ? project.shortDescriptionEN : project.shortDescriptionUA}
@@ -49,11 +50,14 @@ function Projects() {
 }
 
 const Card = forwardRef(({
-  img, skills, title, text, git, deploy,
+  img, imgWebp, skills, title, text, git, deploy,
 }, ref) => (
   <div className={styles.card} ref={ref}>
     <div className={styles.cardImage}>
-      <img src={img} alt="njklk" />
+      <picture>
+        <source srcSet={imgWebp} type="image/webp" />
+        <img src={img} alt="njklk" />
+      </picture>
     </div>
     <div className={styles.cardSkills}>
       {
@@ -77,6 +81,7 @@ const Card = forwardRef(({
 
 Card.propTypes = {
   img: PropTypes.string.isRequired,
+  imgWebp: PropTypes.string.isRequired,
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
   git: PropTypes.string.isRequired,
