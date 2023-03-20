@@ -1,23 +1,23 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MyContext } from '../../Context';
-import styles from './Contacts.module.scss';
+import styles from './Contact.module.scss';
 
-function Contacts() {
+function Contact() {
   const { t } = useTranslation();
   const { contacts } = useContext(MyContext);
   return (
-    <section className={styles.contacts}>
+    <section className={styles.contact}>
       <div className="container">
-        <h2 className={styles.title}>
-          <span>#</span>
-          {t('contacts_title')}
-        </h2>
         <div className={styles.container}>
           <div className={styles.content}>
             <p className={styles.text}>
               {t('contacts_text')}
             </p>
+            <div className={styles.phone}>
+              {contacts[0].icon}
+              <a href={`tel:${contacts[0].value}`}>+380(97)914-94-44</a>
+            </div>
             <div className={styles.telegram}>
               {contacts[2].icon}
               <a href={contacts[2].value} target="_blank" rel="noreferrer">@Artem_Lira</a>
@@ -67,4 +67,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default Contact;
