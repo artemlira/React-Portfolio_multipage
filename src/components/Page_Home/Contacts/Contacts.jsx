@@ -28,15 +28,38 @@ function Contacts() {
               <a href={`mailto:${contacts[1].value}`}>{contacts[1].value}</a>
             </div>
           </div>
-          <form name="contacts" method="POST" className={styles.form}>
-            <input type="hidden" name="form-name" value="contacts" />
+          <form name="contact" method="POST" action="/contact" className={styles.form}>
+            <input type="hidden" name="form-name" value="contact" />
             <h4 className={styles.formTitle}>{t('contacts_formTitle')}</h4>
             <div className={styles.label}>
-              <input type="text" name="name" className={styles.inputName} placeholder={t('contacts_inputName')} required />
-              <input type="email" name="email" className={styles.inputEmail} placeholder={t('contacts_inputEmail')} required />
+              <input
+                type="text"
+                name="name"
+                className={styles.inputName}
+                placeholder={t('contacts_inputName')}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                className={styles.inputEmail}
+                placeholder={t('contacts_inputEmail')}
+                required
+              />
             </div>
-            <input type="text" name="title" className={styles.inputTitle} placeholder={t('contacts_inputTitle')} required />
-            <input type="text" name="message" className={styles.message} placeholder={t('contacts_message')} required />
+            <input
+              type="text"
+              name="title"
+              className={styles.inputTitle}
+              placeholder={t('contacts_inputTitle')}
+              required
+            />
+            <textarea
+              name="message"
+              className={styles.message}
+              placeholder={t('contacts_message')}
+              required
+            />
             <button type="submit" className={styles.button}>{t('contacts_button')}</button>
           </form>
         </div>

@@ -16,6 +16,8 @@ import Sudoky from './assets/images/Home_Projects/Sudoky.jpg';
 import SudokyWebp from './assets/images/Home_Projects/sudoky.webp';
 import TagGame from './assets/images/Home_Projects/TagGame.jpg';
 import TagGameWebp from './assets/images/Home_Projects/taggame.webp';
+import Portfolio from './assets/images/Home_Projects/Portfolio.jpg';
+import PortfolioWebp from './assets/images/Home_Projects/portfolio.webp';
 
 const portfolio = {
   projects: {
@@ -199,6 +201,27 @@ const portfolio = {
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/React-Memory_Simulator.git',
         deploy: 'https://memory-simulator.web.app/',
+      },
+      {
+        id: 6,
+        img: Portfolio,
+        imgWebp: PortfolioWebp,
+        title: 'Portfolio Artem Lira',
+        skills: [
+          'React',
+          'JavaScript',
+          'SCSS',
+          'HTML',
+          'CSS',
+          'Framer-motion',
+          'Firebase',
+        ],
+        shortDescriptionUA: 'Портфоліо робіт Ліри Артема',
+        shortDescriptionEN: 'Portfolio of works by Lyra Artem',
+        fullDescriptionUA: '',
+        fullDescriptionEN: '',
+        git: 'https://github.com/artemlira/React-Portfolio_multipage.git',
+        deploy: 'https://artem-lira.netlify.app/',
       },
     ],
   },
