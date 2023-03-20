@@ -10,7 +10,7 @@ export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
   const [dataDB] = useState(DB); // to connect from a local file, not through a server
   const {
-    skills, media, contacts, projects,
+    skills, media, contacts, projects, facts,
   } = dataDB;
 
   // const [dataDB, setDataDB] = useState(null); // Connecting data via a server
@@ -35,7 +35,8 @@ export default function Context({ children }) {
     media,
     contacts,
     projects,
-  }), [openMenu, setOpenMenu, dataDB, skills, media, contacts, projects]);
+    facts,
+  }), [openMenu, setOpenMenu, dataDB, skills, media, contacts, projects, facts]);
 
   return (
     <MyContext.Provider value={value}>{children}</MyContext.Provider>

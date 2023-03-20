@@ -30,7 +30,7 @@ function Skills() {
   );
 }
 
-const Skill = forwardRef(({ title, text }, ref) => (
+export const Skill = forwardRef(({ title, text }, ref) => (
   <div className={styles.skillWrapper} ref={ref}>
     <h4 className={styles.skillTitle}>{title}</h4>
     <ul className={styles.skillsList}>
