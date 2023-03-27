@@ -1,18 +1,30 @@
-import React, { useState, createContext, useMemo } from 'react';
+import React, {
+  useState, createContext, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 // import axios from 'axios'; // Connecting data via a server
-// import DB from '../../db.json'; // to connect from a local file, not through a server
-import DB from '../DB';
+import portfolio from '../DB';
 
 export const MyContext = createContext();
 
 export default function Context({ children }) {
   const [openMenu, setOpenMenu] = useState(false); // burger menu opening status
-  const [dataDB] = useState(DB); // to connect from a local file, not through a server
+  const [dataDB] = useState(portfolio); // to connect from a local file, not through a server
+
+  // fetch data via fetch
+  // const [dataDB, setDataDB] = useState(null); // Connecting data via a server
+  // useEffect(() => {
+  //   fetch('../../db.json')
+  //     .then((res) => res.json())
+  //     .then((data) => setDataDB(data))
+  //     .catch((err) => console.error(err));
+  // }, []);
+
   const {
     skills, media, contacts, projects, facts,
   } = dataDB;
 
+  // Receiving data via axios
   // const [dataDB, setDataDB] = useState(null); // Connecting data via a server
   // useEffect(() => {
   //   const url = 'http://localhost:3001/';

@@ -19,12 +19,12 @@ function Contacts() {
               {t('contacts_text')}
             </p>
             <div className={styles.telegram}>
-              {contacts[2].icon}
-              <a href={contacts[2].value} target="_blank" rel="noreferrer">@Artem_Lira</a>
+              {contacts && contacts[2].icon}
+              <a href={contacts && contacts[2].value} target="_blank" rel="noreferrer">@Artem_Lira</a>
             </div>
             <div className={styles.email}>
-              {contacts[1].icon}
-              <a href={`mailto:${contacts[1].value}`}>{contacts[1].value}</a>
+              {contacts && contacts[1].icon}
+              <a href={`mailto:${contacts && contacts[1].value}`}>{contacts && contacts[1].value}</a>
             </div>
           </div>
           <form name="contact" method="POST" action="/contact" className={styles.form}>

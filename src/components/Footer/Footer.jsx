@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import LogoLira from '../LogoLira';
+import { MyContext } from '../Context';
 import styles from './Footer.module.scss';
-import { MyContext } from "../Context";
 
 function Footer() {
   const { media, contacts } = useContext(MyContext);
@@ -13,14 +13,14 @@ function Footer() {
             <div className={styles.wrapperContacts}>
               <div className={styles.contacts}>
                 <LogoLira />
-                <a href={`mailto:${contacts[1].value}`} className={styles.mail}>{contacts[1].value}</a>
+                <a href={`mailto:${contacts && contacts[1].value}`} className={styles.mail}>{contacts && contacts[1].value}</a>
               </div>
               <p className={styles.text}>Front-end developer</p>
             </div>
             <div className={styles.media}>
               <h3 className={styles.title}>Media</h3>
               <div className={styles.icons}>
-                {media.map((item) => (
+                {media?.map((item) => (
                   <a key={item.id} href={item.link} target="_blank" rel="noreferrer">
                     {item.icon}
                   </a>

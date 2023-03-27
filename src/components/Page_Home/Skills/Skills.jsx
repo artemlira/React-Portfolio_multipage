@@ -16,7 +16,7 @@ function Skills() {
         </h2>
         <div className={styles.container}>
           <div className={styles.content}>
-            {skills.map((item) => (
+            {skills?.map((item) => (
               <Skill
                 key={item.id}
                 title={i18n.language === 'en' ? item.categoryEN : item.categoryUA}
