@@ -17,10 +17,23 @@ function AboutMe() {
         )}
         <div className={styles.container}>
           <div className={styles.content}>
-            <p className={styles.contentLabel}>{t('about_label')}</p>
-            <p className={styles.contentAboutMe}>{t('about_aboutMe')}</p>
-            <p className={styles.contentText}>{t('about_text')}</p>
-            {pathname === '/' && <Link className={styles.link} to="about">{t('about_link')}</Link>}
+            {pathname === '/'
+              ? (
+                <>
+                  <p className={styles.contentLabel}>{t('about_label')}</p>
+                  <p className={styles.contentAboutMe}>{t('about_aboutMe')}</p>
+                  <p className={styles.contentText}>{t('about_text')}</p>
+                  <Link className={styles.link} to="about">{t('about_link')}</Link>
+                </>
+              )
+              : (
+                <>
+                  <p>{t('aboutMe_label')}</p>
+                  <p>{t('aboutMe_text1')}</p>
+                  <p>{t('aboutMe_text2')}</p>
+                  <p>{t('aboutMe_text3')}</p>
+                </>
+              )}
           </div>
           <div className={styles.image} />
         </div>

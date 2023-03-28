@@ -334,8 +334,24 @@ const portfolio = {
   ],
   facts:
   {
-    valueUA: ['Я полюбляю риболовлю', 'Я люблю літо більше, ніж зиму', 'Я часто їжджу на велосипеді з друзями', 'Люблю піцу та пасту', 'Я був у Єгипті, Польщі та Чехії', 'Мій улюблений фільм - "Зелена миля'],
-    valueEN: ['I like fishing', 'I love summer more than winter', 'I often bike with my friends', 'I like pizza and pasta', 'I have been to Egypt, Poland, and the Czech Republic', 'My favorite movie is The Green Mile'],
+    valueUA: [
+      'Я дуже полюбляю риболовлю',
+      'Моя найулюбленіша пора року - весна',
+      'Я часто їжджу на велосипеді з друзями',
+      'Люблю займатися спортом',
+      'Люблю піцу та пасту',
+      'Я був у Єгипті, Польщі та Чехії',
+      'Мій улюблений спосіб проведення часу - Кемпінг',
+    ],
+    valueEN: [
+      'I like fishing very much',
+      'My favourite season is spring',
+      'I often ride a bike with my friends',
+      'I like to do sports.',
+      'I love pizza and pasta',
+      'I have been to Egypt, Poland, and the Czech Republic',
+      'My favourite way to spend time is camping',
+    ],
   },
 };
 
