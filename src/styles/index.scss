@@ -64,6 +64,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.loading {
+  margin-inline: auto;
 }
 
 .main {
@@ -77,6 +82,6 @@ body {
   position: relative;
 }
 
-.active-header{
+.active-header {
   color: v.$white;
 }

@@ -9,7 +9,7 @@ import './i18n';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="loading">Loading...</div>}>
       <BrowserRouter>
         <Context>
           <ScrollToTop />
