@@ -13,7 +13,7 @@ function Footer() {
             <div className={styles.wrapperContacts}>
               <div className={styles.contacts}>
                 <LogoLira />
-                <a href={`mailto:${contacts && contacts[1].value}`} className={styles.mail}>{contacts && contacts[1].value}</a>
+                <a href={`mailto:${contacts && contacts[1]?.value}`} className={styles.mail}>{contacts && contacts[1].value}</a>
               </div>
               <p className={styles.text}>Front-end developer</p>
             </div>

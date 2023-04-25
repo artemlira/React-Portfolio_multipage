@@ -18,6 +18,8 @@ import TagGame from './assets/images/Home_Projects/TagGame.jpg';
 import TagGameWebp from './assets/images/Home_Projects/taggame.webp';
 import Portfolio from './assets/images/Home_Projects/Portfolio.jpg';
 import PortfolioWebp from './assets/images/Home_Projects/portfolio.webp';
+import HealtyFood from './assets/images/Home_Projects/Healthy food.jpg';
+import HealtyFoodWebp from './assets/images/Home_Projects/healthy-food.webp';
 
 const portfolio = {
   projects: {
@@ -27,14 +29,7 @@ const portfolio = {
         img: TodoList,
         imgWebp: TodoListWebp,
         title: 'Todo List',
-        skills: [
-          'React',
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Firebase',
-        ],
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Firebase'],
         shortDescriptionUA: 'Список справ',
         shortDescriptionEN: 'List of references',
         fullDescriptionUA: '',
@@ -47,14 +42,7 @@ const portfolio = {
         img: Furniture,
         imgWebp: FurnitureWebp,
         title: 'Furniture',
-        skills: [
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Gulp',
-          'Animate-animated',
-        ],
+        skills: ['JavaScript', 'SCSS', 'HTML', 'CSS', 'Gulp', 'Animate-animated'],
         shortDescriptionUA: 'Лендінг сайту меблевої компанії',
         shortDescriptionEN: 'Landing page for a furniture company',
         fullDescriptionUA: '',
@@ -67,14 +55,7 @@ const portfolio = {
         img: Restorant,
         imgWebp: RestorantWebp,
         title: 'Restorant',
-        skills: [
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Gulp',
-          'Netlify',
-        ],
+        skills: ['JavaScript', 'SCSS', 'HTML', 'CSS', 'Gulp', 'Netlify'],
         shortDescriptionUA: 'Лендінг сайту ресторану',
         shortDescriptionEN: 'Landing page of a restaurant website',
         fullDescriptionUA: '',
@@ -87,16 +68,13 @@ const portfolio = {
         img: Sudoky,
         imgWebp: SudokyWebp,
         title: 'Sudoky',
-        skills: [
-          'JavaScript',
-          'HTML',
-          'CSS',
-          'Netlify',
-        ],
+        skills: ['JavaScript', 'HTML', 'CSS', 'Netlify'],
         shortDescriptionUA: 'Дитяча гра Судоку',
         shortDescriptionEN: 'Children`s game Sudoku',
-        fullDescriptionUA: 'Дитяча гра на розвивання логіки, ціль гри: розтавити малюнки таким чином, щоб вони не повторювались ні в горизонтальній лінії, ні в вертикальній.',
-        fullDescriptionEN: 'A children`s game for developing logic, the goal of the game is to arrange the drawings in such a way that they do not repeat either in the horizontal line or in the vertical.',
+        fullDescriptionUA:
+          'Дитяча гра на розвивання логіки, ціль гри: розтавити малюнки таким чином, щоб вони не повторювались ні в горизонтальній лінії, ні в вертикальній.',
+        fullDescriptionEN:
+          'A children`s game for developing logic, the goal of the game is to arrange the drawings in such a way that they do not repeat either in the horizontal line or in the vertical.',
         git: 'https://github.com/artemlira/SudokuGame.git',
         deploy: 'https://sudoky-kids-game.netlify.app/',
       },
@@ -105,16 +83,12 @@ const portfolio = {
         img: TagGame,
         imgWebp: TagGameWebp,
         title: 'Tag Game',
-        skills: [
-          'JavaScript',
-          'HTML',
-          'CSS',
-          'Netlify',
-        ],
+        skills: ['JavaScript', 'HTML', 'CSS', 'Netlify'],
         shortDescriptionUA: 'Гра в п`ятнашки',
         shortDescriptionEN: 'G`s in spades',
         fullDescriptionUA: 'Ціль гри розтавити всі кубики по зростанню від 1 до 15',
-        fullDescriptionEN: 'The purpose of the game is to melt all the cubes in ascending order from 1 to 15',
+        fullDescriptionEN:
+          'The purpose of the game is to melt all the cubes in ascending order from 1 to 15',
         git: 'https://github.com/artemlira/tag_game.git',
         deploy: 'https://childrens-play-tag.netlify.app/',
       },
@@ -125,19 +99,15 @@ const portfolio = {
         img: Gericht,
         imgWebp: GerichtWebp,
         title: 'Gericht',
-        skills: [
-          'React',
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Swiper slider',
-          'Framer-motion',
-        ],
-        shortDescriptionUA: 'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів.',
-        shortDescriptionEN: 'Multipage responsive restaurant website with lots of beautiful animations and sliders.',
-        fullDescriptionUA: 'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів. Застосунок написано з використанням фреймворка Реакт, у якому застосовувалося: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components тощо.',
-        fullDescriptionEN: 'A multi-page responsive restaurant website with lots of beautiful animations and sliders. The application was written using the React framework, which used: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components, etc.',
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Swiper slider', 'Framer-motion'],
+        shortDescriptionUA:
+          'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів.',
+        shortDescriptionEN:
+          'Multipage responsive restaurant website with lots of beautiful animations and sliders.',
+        fullDescriptionUA:
+          'Багатосторінковий адаптивний сайт ресторану з безліччю красивої анімації та слайдерів. Застосунок написано з використанням фреймворка Реакт, у якому застосовувалося: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components тощо.',
+        fullDescriptionEN:
+          'A multi-page responsive restaurant website with lots of beautiful animations and sliders. The application was written using the React framework, which used: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components, etc.',
         git: 'https://github.com/artemlira/React-Gericht_multipage.git',
         deploy: 'https://react-gericht-multipage.netlify.app/',
       },
@@ -146,34 +116,37 @@ const portfolio = {
         img: Millor,
         imgWebp: MillorWebp,
         title: 'Millor',
-        skills: [
-          'React',
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Framer-motion',
-          'Slick-slider',
-        ],
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Framer-motion', 'Slick-slider'],
         shortDescriptionUA: 'Багатосторінковий Інтернет магазин кавової продукції Millor.',
         shortDescriptionEN: 'Multipage online store of Millor coffee products.',
-        fullDescriptionUA: 'Інтернет магазин кавової продукції. Застосунок написано з використанням фреймворка React.js і його хуків useState, useEffect, useRef і useContext. Для перемикання сторінок використовувалась бібліотека React Router Dom 6 версії. Для реалізації повзунків — бібліотека Slick-slider, а для реалізації анімації — бібліотека Framer Motion.',
-        fullDescriptionEN: 'An online coffee shop. The application was written using the React.js framework and its useState, useEffect, useRef, and useContext hooks. The React Router Dom 6 library was used to switch pages. The Slick-slider library was used to implement sliders, and the Framer Motion library was used to implement animations.',
+        fullDescriptionUA:
+          'Інтернет магазин кавової продукції. Застосунок написано з використанням фреймворка React.js і його хуків useState, useEffect, useRef і useContext. Для перемикання сторінок використовувалась бібліотека React Router Dom 6 версії. Для реалізації повзунків — бібліотека Slick-slider, а для реалізації анімації — бібліотека Framer Motion.',
+        fullDescriptionEN:
+          'An online coffee shop. The application was written using the React.js framework and its useState, useEffect, useRef, and useContext hooks. The React Router Dom 6 library was used to switch pages. The Slick-slider library was used to implement sliders, and the Framer Motion library was used to implement animations.',
         git: 'https://github.com/artemlira/React-Millor_layout',
         deploy: 'https://react-millor-layout.netlify.app/',
+      },
+      {
+        id: 3,
+        img: HealtyFood,
+        imgWebp: HealtyFoodWebp,
+        title: 'Healthy Switcher',
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Framer-motion', 'Slick-slider'],
+        shortDescriptionUA: 'Сайт для здорового харчування, з реалізацією замовлення їжі',
+        shortDescriptionEN: 'A site for healthy eating, with the implementation of ordering a meal',
+        fullDescriptionUA:
+          'Сайт ресторану здорового харчування. Застосунок написано з використанням фреймворка React.js і його хуків useState, useEffect, useRef і useContext. Для реалізації повзунків — бібліотека Slick-slider, а для реалізації анімації — бібліотека Framer Motion.',
+        fullDescriptionEN:
+          'The website of a healthy food restaurant. The application is written using the React.js framework and its useState, useEffect, useRef, and useContext hooks. The Slick-slider library is used to implement sliders, and the Framer Motion library is used to implement animation.',
+        git: 'https://github.com/artemlira/React-HealthySwitcher_landing',
+        deploy: 'https://healthyswitcher.netlify.app/',
       },
       {
         id: 4,
         img: Haus,
         imgWebp: HausWebp,
         title: 'Haus',
-        skills: [
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Gulp',
-        ],
+        skills: ['JavaScript', 'SCSS', 'HTML', 'CSS', 'Gulp'],
         shortDescriptionUA: 'Односторінковий адаптивний статичний сайт алкогольної продукції Haus.',
         shortDescriptionEN: 'One-page responsive static website for Haus alcohol products.',
         fullDescriptionUA: '',
@@ -186,15 +159,7 @@ const portfolio = {
         img: Memory,
         imgWebp: MemoryWebp,
         title: 'Memory Simulator',
-        skills: [
-          'React',
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Framer-motion',
-          'Firebase',
-        ],
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Framer-motion', 'Firebase'],
         shortDescriptionUA: 'Дитяча гра для тренування пам`яті',
         shortDescriptionEN: 'Children`s game for memory training',
         fullDescriptionUA: '',
@@ -207,15 +172,7 @@ const portfolio = {
         img: Portfolio,
         imgWebp: PortfolioWebp,
         title: 'Portfolio Artem Lira',
-        skills: [
-          'React',
-          'JavaScript',
-          'SCSS',
-          'HTML',
-          'CSS',
-          'Framer-motion',
-          'Firebase',
-        ],
+        skills: ['React', 'JavaScript', 'SCSS', 'HTML', 'CSS', 'Framer-motion', 'Firebase'],
         shortDescriptionUA: 'Портфоліо робіт Ліри Артема',
         shortDescriptionEN: 'Portfolio of works by Lyra Artem',
         fullDescriptionUA: '',
@@ -230,40 +187,25 @@ const portfolio = {
       id: 1,
       categoryEN: 'Languages',
       categoryUA: 'Мови програмування',
-      value: [
-        'JavaScript',
-      ],
+      value: ['JavaScript'],
     },
     {
       id: 2,
       categoryEN: 'Databases',
       categoryUA: 'Бази даних',
-      value: [
-        'MongoDB',
-        'Firebase',
-        'Netlify',
-      ],
+      value: ['MongoDB', 'Firebase', 'Netlify'],
     },
     {
       id: 3,
       categoryEN: 'Other',
       categoryUA: 'Інше',
-      value: [
-        'HTML',
-        'CSS',
-        'SASS/SCSS',
-        'Fetch',
-        'Axios',
-      ],
+      value: ['HTML', 'CSS', 'SASS/SCSS', 'Fetch', 'Axios'],
     },
     {
       id: 4,
       categoryEN: 'Frameworks',
       categoryUA: 'Фреймворки',
-      value: [
-        'React.js',
-        'Express.js',
-      ],
+      value: ['React.js', 'Express.js'],
     },
     {
       id: 5,
@@ -272,6 +214,7 @@ const portfolio = {
       value: [
         'VSCode',
         'Figma',
+        'Adobe XD',
         'Font Awesome',
         'Git',
         'Framer Motion',
@@ -279,6 +222,8 @@ const portfolio = {
         'Swiper Slider',
         'Animate animated',
         'Bootstrap',
+        'TailwindCSS',
+        'Material UI',
         'Styled components',
         'Vite',
         'Webpack',
@@ -291,25 +236,41 @@ const portfolio = {
       id: 1,
       name: 'git',
       link: 'https://github.com/artemlira',
-      icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>,
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+        </svg>
+      ),
     },
     {
       id: 2,
       name: 'linkedin',
-      link: 'https://linkedin.com/in/артем-ліра-395111246',
-      icon: <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" /></svg>,
+      link: 'https://www.linkedin.com/in/artem-lira/',
+      icon: (
+        <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+        </svg>
+      ),
     },
     {
       id: 3,
       name: 'instagram',
       link: 'https://www.instagram.com/artemlira/',
-      icon: <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>,
+      icon: (
+        <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+        </svg>
+      ),
     },
     {
       id: 4,
       name: 'facebook',
       link: 'https://www.facebook.com/artem.lira',
-      icon: <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" /></svg>,
+      icon: (
+        <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+        </svg>
+      ),
     },
   ],
   contacts: [
@@ -317,23 +278,34 @@ const portfolio = {
       id: 1,
       name: 'phone',
       value: '+380979149444',
-      icon: <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15,2A1,1 0 0,0 14,3V6H10C8.89,6 8,6.89 8,8V20C8,21.11 8.89,22 10,22H15C16.11,22 17,21.11 17,20V8C17,7.26 16.6,6.62 16,6.28V3A1,1 0 0,0 15,2M10,8H15V13H10V8M10,15H11V16H10V15M12,15H13V16H12V15M14,15H15V16H14V15M10,17H11V18H10V17M12,17H13V18H12V17M14,17H15V18H14V17M10,19H11V20H10V19M12,19H13V20H12V19M14,19H15V20H14V19Z" /></svg>,
+      icon: (
+        <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M15,2A1,1 0 0,0 14,3V6H10C8.89,6 8,6.89 8,8V20C8,21.11 8.89,22 10,22H15C16.11,22 17,21.11 17,20V8C17,7.26 16.6,6.62 16,6.28V3A1,1 0 0,0 15,2M10,8H15V13H10V8M10,15H11V16H10V15M12,15H13V16H12V15M14,15H15V16H14V15M10,17H11V18H10V17M12,17H13V18H12V17M14,17H15V18H14V17M10,19H11V20H10V19M12,19H13V20H12V19M14,19H15V20H14V19Z" />
+        </svg>
+      ),
     },
     {
       id: 2,
       name: 'email',
       value: 'artemliradev@gmail.com',
-      icon: <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg>,
+      icon: (
+        <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+        </svg>
+      ),
     },
     {
       id: 3,
       name: 'telegram',
       value: 'https://t.me/Artem_Lira',
-      icon: <svg viewBox="0 0 23 23" xmlns="http: //www.w3.org/2000/svg"><path d="M23 11.5C23 14.55 21.7884 17.4751 19.6317 19.6317C17.4751 21.7884 14.55 23 11.5 23C8.45001 23 5.52494 21.7884 3.36827 19.6317C1.2116 17.4751 0 14.55 0 11.5C0 8.45001 1.2116 5.52494 3.36827 3.36827C5.52494 1.2116 8.45001 0 11.5 0C14.55 0 17.4751 1.2116 19.6317 3.36827C21.7884 5.52494 23 8.45001 23 11.5ZM11.9126 8.48987C10.7942 8.95563 8.55744 9.91875 5.20519 11.3792C4.66181 11.5949 4.37575 11.8076 4.34987 12.0146C4.30675 12.3639 4.74519 12.5019 5.34175 12.6903L5.59331 12.7693C6.17981 12.9605 6.97044 13.1833 7.38012 13.1919C7.75387 13.2006 8.16931 13.0482 8.62787 12.7319C11.7602 10.6174 13.3774 9.54931 13.478 9.52631C13.5499 9.50906 13.6505 9.48894 13.7166 9.54931C13.7842 9.60825 13.777 9.72181 13.7698 9.752C13.7267 9.93744 12.006 11.5359 11.1162 12.3639C10.8387 12.6227 10.6418 12.8053 10.6016 12.8469C10.5129 12.9375 10.4228 13.0267 10.3313 13.1143C9.78506 13.6404 9.37681 14.0343 10.3529 14.6783C10.8229 14.9888 11.1996 15.2432 11.5747 15.4991C11.983 15.778 12.3912 16.0554 12.9202 16.4033C13.0539 16.4896 13.1833 16.583 13.3084 16.6721C13.7842 17.0114 14.214 17.3161 14.7416 17.2673C15.0492 17.2385 15.3669 16.951 15.5279 16.0885C15.9088 14.0516 16.6578 9.63988 16.8302 7.82144C16.8408 7.67027 16.8345 7.51841 16.8116 7.36862C16.798 7.24776 16.7395 7.13641 16.6477 7.05669C16.5169 6.9664 16.361 6.91962 16.2021 6.923C15.7708 6.93019 15.1052 7.16163 11.9126 8.48987Z" /></svg>,
+      icon: (
+        <svg viewBox="0 0 23 23" xmlns="http: //www.w3.org/2000/svg">
+          <path d="M23 11.5C23 14.55 21.7884 17.4751 19.6317 19.6317C17.4751 21.7884 14.55 23 11.5 23C8.45001 23 5.52494 21.7884 3.36827 19.6317C1.2116 17.4751 0 14.55 0 11.5C0 8.45001 1.2116 5.52494 3.36827 3.36827C5.52494 1.2116 8.45001 0 11.5 0C14.55 0 17.4751 1.2116 19.6317 3.36827C21.7884 5.52494 23 8.45001 23 11.5ZM11.9126 8.48987C10.7942 8.95563 8.55744 9.91875 5.20519 11.3792C4.66181 11.5949 4.37575 11.8076 4.34987 12.0146C4.30675 12.3639 4.74519 12.5019 5.34175 12.6903L5.59331 12.7693C6.17981 12.9605 6.97044 13.1833 7.38012 13.1919C7.75387 13.2006 8.16931 13.0482 8.62787 12.7319C11.7602 10.6174 13.3774 9.54931 13.478 9.52631C13.5499 9.50906 13.6505 9.48894 13.7166 9.54931C13.7842 9.60825 13.777 9.72181 13.7698 9.752C13.7267 9.93744 12.006 11.5359 11.1162 12.3639C10.8387 12.6227 10.6418 12.8053 10.6016 12.8469C10.5129 12.9375 10.4228 13.0267 10.3313 13.1143C9.78506 13.6404 9.37681 14.0343 10.3529 14.6783C10.8229 14.9888 11.1996 15.2432 11.5747 15.4991C11.983 15.778 12.3912 16.0554 12.9202 16.4033C13.0539 16.4896 13.1833 16.583 13.3084 16.6721C13.7842 17.0114 14.214 17.3161 14.7416 17.2673C15.0492 17.2385 15.3669 16.951 15.5279 16.0885C15.9088 14.0516 16.6578 9.63988 16.8302 7.82144C16.8408 7.67027 16.8345 7.51841 16.8116 7.36862C16.798 7.24776 16.7395 7.13641 16.6477 7.05669C16.5169 6.9664 16.361 6.91962 16.2021 6.923C15.7708 6.93019 15.1052 7.16163 11.9126 8.48987Z" />
+        </svg>
+      ),
     },
   ],
-  facts:
-  {
+  facts: {
     valueUA: [
       'Я дуже полюбляю риболовлю',
       'Моя найулюбленіша пора року - весна',

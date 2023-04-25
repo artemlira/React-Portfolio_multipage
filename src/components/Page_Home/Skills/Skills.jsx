@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useContext, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +19,7 @@ function Skills() {
           <div className={styles.content}>
             {skills?.map((item) => (
               <Skill
-                key={item.id}
+                key={item._id}
                 title={i18n.language === 'en' ? item.categoryEN : item.categoryUA}
                 text={item.value}
               />

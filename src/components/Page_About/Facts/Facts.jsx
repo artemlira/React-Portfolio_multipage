@@ -6,6 +6,7 @@ import styles from './Facts.module.scss';
 function Facts() {
   const { t, i18n } = useTranslation();
   const { facts } = useContext(MyContext);
+  // const [data] = facts;
   return (
     <section className={styles.facts}>
       <div className="container">
