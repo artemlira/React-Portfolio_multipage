@@ -109,7 +109,7 @@ const portfolio = {
         fullDescriptionEN:
           'A multi-page responsive restaurant website with lots of beautiful animations and sliders. The application was written using the React framework, which used: useEffect, useState, useContext, Router Dom v.6, Swiper, Framer-motion, Styled-components, etc.',
         git: 'https://github.com/artemlira/React-Gericht_multipage.git',
-        deploy: 'https://react-gericht-multipage.netlify.app/',
+        deploy: 'https://bit.ly/44641by',
       },
       {
         id: 2,
@@ -124,7 +124,7 @@ const portfolio = {
         fullDescriptionEN:
           'An online coffee shop. The application was written using the React.js framework and its useState, useEffect, useRef, and useContext hooks. The React Router Dom 6 library was used to switch pages. The Slick-slider library was used to implement sliders, and the Framer Motion library was used to implement animations.',
         git: 'https://github.com/artemlira/React-Millor_layout',
-        deploy: 'https://react-millor-layout.netlify.app/',
+        deploy: 'https://bit.ly/3jxYHe1',
       },
       {
         id: 3,
@@ -139,7 +139,7 @@ const portfolio = {
         fullDescriptionEN:
           'The website of a healthy food restaurant. The application is written using the React.js framework and its useState, useEffect, useRef, and useContext hooks. The Slick-slider library is used to implement sliders, and the Framer Motion library is used to implement animation.',
         git: 'https://github.com/artemlira/React-HealthySwitcher_landing',
-        deploy: 'https://healthyswitcher.netlify.app/',
+        deploy: 'https://bit.ly/3oMi5GJ',
       },
       {
         id: 4,
@@ -152,7 +152,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/React-Millor_layout',
-        deploy: 'https://hause-site.netlify.app/',
+        deploy: 'https://bit.ly/3NeKPSJ',
       },
       {
         id: 5,
@@ -165,7 +165,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/React-Memory_Simulator.git',
-        deploy: 'https://memory-simulator.web.app/',
+        deploy: 'https://bit.ly/41CUEhD',
       },
       {
         id: 6,
@@ -178,7 +178,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/React-Portfolio_multipage.git',
-        deploy: 'https://artem-lira.netlify.app/',
+        deploy: 'https://bit.ly/3TpLaDj',
       },
     ],
   },
