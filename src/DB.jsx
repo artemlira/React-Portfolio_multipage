@@ -35,7 +35,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/todo-list_React.git',
-        deploy: 'https://my-todo-a5bd2.web.app/',
+        deploy: 'https://bit.ly/3nd7NPw',
       },
       {
         id: 2,
@@ -48,7 +48,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/Furniture.test.git',
-        deploy: 'https://draft-furniture-test.netlify.app/',
+        deploy: 'https://bit.ly/3oJIkhe',
       },
       {
         id: 3,
@@ -61,7 +61,7 @@ const portfolio = {
         fullDescriptionUA: '',
         fullDescriptionEN: '',
         git: 'https://github.com/artemlira/Restorant.git',
-        deploy: 'https://restorant-test.netlify.app/',
+        deploy: 'https://bit.ly/41KduUf',
       },
       {
         id: 4,
@@ -76,7 +76,7 @@ const portfolio = {
         fullDescriptionEN:
           'A children`s game for developing logic, the goal of the game is to arrange the drawings in such a way that they do not repeat either in the horizontal line or in the vertical.',
         git: 'https://github.com/artemlira/SudokuGame.git',
-        deploy: 'https://sudoky-kids-game.netlify.app/',
+        deploy: 'https://bit.ly/40zbMni',
       },
       {
         id: 5,
@@ -90,7 +90,7 @@ const portfolio = {
         fullDescriptionEN:
           'The purpose of the game is to melt all the cubes in ascending order from 1 to 15',
         git: 'https://github.com/artemlira/tag_game.git',
-        deploy: 'https://childrens-play-tag.netlify.app/',
+        deploy: 'https://bit.ly/442xLpH',
       },
     ],
     completeApps: [
