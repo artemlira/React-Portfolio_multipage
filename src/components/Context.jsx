@@ -44,6 +44,9 @@ export default function Context({ children }) {
   //     });
   // };
 
+  // axios.get('https://cerulean-ostrich-gear.cyclic.app/skills')
+  //   .then((res) => console.log(res.data));
+
   // useEffect(() => {
   //   getData('http://localhost:4444/skills', setSkills);
   //   getData('http://localhost:4444/contacts', setContacts);
