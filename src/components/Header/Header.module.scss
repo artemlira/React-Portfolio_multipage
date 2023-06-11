@@ -82,7 +82,7 @@
   cursor: pointer;
   position: relative;
 
-  @media screen and (min-width:769px) {
+  @media screen and (min-width: 769px) {
     display: none;
     position: absolute;
   }
@@ -93,7 +93,6 @@
   height: 0.125rem;
   background-color: v.$white;
   margin-top: 0.3125rem;
-
 
   &::after,
   &::before {
@@ -142,4 +141,18 @@
   background-color: transparent;
   outline: none;
   cursor: pointer;
+}
+
+.out {
+  padding: 8px 12px;
+  background-color: rgb(209, 38, 38);
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: rgb(133, 30, 30);
+  }
 }

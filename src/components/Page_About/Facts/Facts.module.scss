@@ -4,18 +4,22 @@
 
 .facts {
   padding-bottom: 10.125rem;
-  background: url('../../../assets/images/Home_Skills/recBig.svg')left -4.6875rem top 6.25rem / 9.6875rem 9.6875rem no-repeat,
-    url('../../../assets/images/Home_Skills/decor.svg')right -3.125rem bottom 3.125rem/ 6.4375rem 6.4375rem no-repeat,
+  background: url('../../../assets/images/Home_Skills/recBig.svg') left -4.6875rem top 6.25rem / 9.6875rem
+      9.6875rem no-repeat,
+    url('../../../assets/images/Home_Skills/decor.svg') right -3.125rem bottom 3.125rem/ 6.4375rem
+      6.4375rem no-repeat,
     url('../../../assets/images/Home_Skills/decor.svg') 70% 20% / 3.5rem 3.5rem no-repeat,
     url('../../../assets/icons/LogoALBG.svg') 80% 60% / 8.3125rem 8.3125rem no-repeat;
 
   @include m.laptop {
-    background: url('../../../assets/images/Home_Skills/decor.svg') 70% 20% / 3.5rem 3.5rem no-repeat,
+    background: url('../../../assets/images/Home_Skills/decor.svg') 70% 20% / 3.5rem 3.5rem
+        no-repeat,
       url('../../../assets/icons/LogoALBG.svg') 80% 60% / 8.3125rem 8.3125rem no-repeat;
   }
 
   @include m.netbook {
-    background: url('../../../assets/images/Home_Skills/decor.svg') 100% 20% / 3.5rem 3.5rem no-repeat,
+    background: url('../../../assets/images/Home_Skills/decor.svg') 100% 20% / 3.5rem 3.5rem
+        no-repeat,
       url('../../../assets/icons/LogoALBG.svg') 100% 60% / 8.3125rem 8.3125rem no-repeat;
   }
 
@@ -35,10 +39,6 @@
   line-height: f.ratio(32, 42);
   color: v.$white;
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
 
   span {
     color: v.$purple;

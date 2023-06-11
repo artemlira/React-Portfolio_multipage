@@ -4,7 +4,8 @@
 
 .skills {
   padding-bottom: 5.1875rem;
-  background: url('../../../assets/images/Home_Skills/decor.svg')right -3.125rem top / 6.4375rem 6.4375rem no-repeat;
+  background: url('../../../assets/images/Home_Skills/decor.svg') right -3.125rem top / 6.4375rem 6.4375rem
+    no-repeat;
 
   @include m.laptop {
     background: initial;
@@ -21,11 +22,6 @@
   line-height: f.ratio(32, 42);
   color: v.$white;
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-
   span {
     color: v.$purple;
   }

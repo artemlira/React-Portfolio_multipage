@@ -1,47 +1,94 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
-import { MyContext } from '../../Context';
-import { Card } from '../../Page_Home/Projects/Projects';
-import styles from './Complete.module.scss';
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { Box, Skeleton } from "@mui/material";
+import { Card } from "../../Page_Home/Projects/Projects";
+import {
+  fetchProjects,
+  fetchRemoveProject,
+} from "../../../redux/slices/projects";
+import { selectIsAuth } from "../../../redux/slices/auth";
+import styles from "./Complete.module.scss";
 
 function Complete() {
   const { t, i18n } = useTranslation();
-  const { projects } = useContext(MyContext);
+  const dispatch = useDispatch();
+  const { projects } = useSelector((state) => state.projects);
+  const isAuth = useSelector(selectIsAuth);
+  const skiletons = [1, 2, 3];
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+  }, [dispatch]);
+
+  const onClickRemove = (data) => {
+    const { id } = data;
+    dispatch(fetchRemoveProject(id));
+  };
+
+  const completeApps = projects.items;
   return (
     <section className={styles.complete}>
       <div className="container">
-        <h2 className={styles.title}>
-          <span>#</span>
-          {t('complete_title')}
-        </h2>
+        <div className="wrapperTitle">
+          <h2 className={styles.title}>
+            <span>#</span>
+            {t("complete_title")}
+          </h2>
+          {isAuth && (
+            <Link to="/add-project">
+              <AddCircleIcon color="secondary" fontSize="large" />
+            </Link>
+          )}
+        </div>
         <div className={styles.container}>
-          {projects?.completeApps.map((project) => (
-            <Card
-              key={project.id}
-              img={project.img}
-              imgWebp={project.imgWebp}
-              skills={project.skills}
-              title={project.title}
-              text={i18n.language === 'en' ? project.shortDescriptionEN : project.shortDescriptionUA}
-              git={project.git}
-              deploy={project.deploy}
-            />
-          ))}
+          {projects?.status === "loading"
+            ? skiletons.map((item) => (
+                <Box sx={{ width: 300 }} key={item}>
+                  <Skeleton variant="rectangular" width="100%" height={200} />
+                  <Skeleton animation="wave" />
+                  <Skeleton animation="wave" />
+                  <Skeleton animation="wave" />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Skeleton animation="wave" width={80} height={40} />
+                    <Skeleton animation="wave" width={80} height={40} />
+                  </Box>
+                </Box>
+              ))
+            : completeApps?.map((project) => (
+                <Card
+                  // eslint-disable-next-line no-underscore-dangle
+                  key={project._id}
+                  img={project.img}
+                  imgWebp={project.imgWebp}
+                  skills={project.skills}
+                  title={project.title}
+                  text={
+                    i18n.language === "en"
+                      ? project.shortDescriptionEN
+                      : project.shortDescriptionUA
+                  }
+                  git={project.git}
+                  deploy={project.deploy}
+                  isAuth={isAuth}
+                  onClickRemove={onClickRemove}
+                  // eslint-disable-next-line no-underscore-dangle
+                  id={project._id}
+                  small={false}
+                />
+              ))}
         </div>
       </div>
     </section>
   );
 }
-
-Card.propTypes = {
-  img: PropTypes.string.isRequired,
-  imgWebp: PropTypes.string.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
-  title: PropTypes.string.isRequired,
-  git: PropTypes.string.isRequired,
-  deploy: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-};
 
 export default Complete;

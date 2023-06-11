@@ -1,10 +1,12 @@
-@use '../../../styles/variables.scss' as v;
-@use '../../../styles/mixins.scss' as m;
-@use '../../../styles/functions.scss' as f;
+@use "../../../styles/variables.scss" as v;
+@use "../../../styles/mixins.scss" as m;
+@use "../../../styles/functions.scss" as f;
 
 .contact {
-  background: url('../../../assets/images/Home_Skills/decor.svg') left 1.25rem bottom / 3.0625rem 3.0625rem no-repeat,
-    url('../../../assets/images/Home_Skills/recBig.svg') right -4.8125rem top / 9.6875rem 9.6875rem no-repeat;
+  background: url("../../../assets/images/Home_Skills/decor.svg") left 1.25rem
+      bottom / 3.0625rem 3.0625rem no-repeat,
+    url("../../../assets/images/Home_Skills/recBig.svg") right -4.8125rem top / 9.6875rem
+      9.6875rem no-repeat;
 
   @include m.laptop {
     background: initial;
@@ -30,9 +32,7 @@
   gap: 1rem;
 }
 
-.phone,
-.telegram,
-.email {
+.values a {
   display: flex;
   gap: 0.4375rem;
   align-items: center;

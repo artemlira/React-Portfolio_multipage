@@ -1,0 +1,61 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+.images {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.addImg,
+.btn {
+  padding: 8px 12px;
+  border: 1px solid wheat;
+  border-radius: 7px;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: #8a5599;
+    color: white;
+  }
+}
+
+.title,
+.skills,
+.shortDescriptionUA,
+.shortDescriptionEN,
+.fullDescriptionUA,
+.fullDescriptionEN,
+.git,
+.deploy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  input {
+    padding: 8px 12px;
+    border: 1px solid wheat;
+    border-radius: 7px;
+  }
+}
+
+.mini {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.wrapperImages {
+  display: flex;
+  gap: 15px;
+}

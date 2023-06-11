@@ -1,0 +1,48 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.container {
+  padding-block: 50px;
+  overflow: hidden;
+}
+
+.form {
+  display: block;
+  margin-inline: auto;
+  max-width: 300px;
+  border: 2px solid v.$purple;
+  background-color: v.$grey;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 20px;
+}
+.name,
+.password,
+.email {
+  color: v.$black;
+  input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 7px;
+
+    &:focus {
+      outline: 2px solid v.$purple;
+    }
+  }
+}
+.btn {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 7px;
+  color: v.$black;
+  background-color: v.$purple;
+  transition: 0.2s ease-in;
+  text-align: center;
+  &:hover {
+    background-color: #865294;
+    color: v.$white;
+  }
+}

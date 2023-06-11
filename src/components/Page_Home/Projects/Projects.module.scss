@@ -1,10 +1,11 @@
-@use '../../../styles/variables.scss' as v;
-@use '../../../styles/mixins.scss' as m;
-@use '../../../styles/functions.scss' as f;
+@use "../../../styles/variables.scss" as v;
+@use "../../../styles/mixins.scss" as m;
+@use "../../../styles/functions.scss" as f;
 
 .projects {
   padding-bottom: 6.625rem;
-  background: url('../../../assets/images/Home_Projects/bg.svg')left 0rem top 4.0625rem / 2.125rem 5.25rem no-repeat;
+  background: url("../../../assets/images/Home_Projects/bg.svg") left 0rem top
+    4.0625rem / 2.125rem 5.25rem no-repeat;
 
   @include m.tablet {
     background: initial;
@@ -35,7 +36,7 @@
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 38vw;
     height: 0.0625rem;
@@ -45,14 +46,13 @@
     transform: translateY(-50%);
     left: 11.875rem;
 
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       width: 28vw;
     }
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width: 600px) {
       width: 0;
     }
-
   }
 
   span,
@@ -131,6 +131,9 @@
   gap: 0.5rem;
   border-top: 0.0625rem solid v.$grey;
   border-bottom: 0.0625rem solid v.$grey;
+  span {
+    color: v.$white;
+  }
 }
 
 .content {

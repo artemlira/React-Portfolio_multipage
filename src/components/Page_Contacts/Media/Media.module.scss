@@ -17,10 +17,6 @@
   color: v.$white;
   position: relative;
 
-  &:not(:last-child) {
-    margin-bottom: 1.4375rem;
-  }
-
   span {
     color: v.$purple;
   }
@@ -36,16 +32,22 @@
     gap: 0.625rem;
     align-items: center;
 
-    svg {
+    .icon {
       width: 2rem;
       height: 2rem;
-      fill: v.$grey;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: v.$grey;
+        object-fit: cover;
+      }
     }
 
     &:hover {
       color: v.$white;
 
-      svg {
+      svg * {
         fill: v.$white;
       }
     }
