@@ -16,14 +16,14 @@ const override = {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Suspense fallback={<FadeLoader cssOverride={override} color="#c778dd" />}>
-      <BrowserRouter>
-        <Provider store={store}>
-          <ScrollToTop />
-          <App />
-        </Provider>
-      </BrowserRouter>
-    </Suspense>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Suspense fallback={<FadeLoader cssOverride={override} color="#c778dd" />}>
+    <BrowserRouter>
+      <Provider store={store}>
+        <ScrollToTop />
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </Suspense>
+  // </React.StrictMode>
 );
