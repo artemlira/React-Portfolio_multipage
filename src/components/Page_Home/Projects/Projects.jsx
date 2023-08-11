@@ -79,6 +79,7 @@ function Projects() {
                         // eslint-disable-next-line no-underscore-dangle
                         id={project._id}
                         small={false}
+                        t={t}
                       />
                     )
                 )}
@@ -103,6 +104,7 @@ export const Card = forwardRef(
       onClickRemove,
       id,
       small,
+      t,
     },
     ref
   ) => (
@@ -135,10 +137,10 @@ export const Card = forwardRef(
             target="_blank"
             rel="noreferrer"
           >
-            Deploy
+            {t("project_deploy")}
           </a>
           <a className={styles.git} href={git} target="_blank" rel="noreferrer">
-            Git
+            {t("project_code")}
           </a>
         </div>
         {isAuth && (
@@ -170,6 +172,7 @@ Card.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   small: PropTypes.bool.isRequired,
   onClickRemove: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default Projects;

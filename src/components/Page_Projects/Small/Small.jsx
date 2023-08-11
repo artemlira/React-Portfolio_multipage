@@ -84,6 +84,7 @@ function Small() {
                   // eslint-disable-next-line no-underscore-dangle
                   id={project._id}
                   small
+                  t={t}
                 />
               ))}
         </div>

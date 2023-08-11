@@ -1,11 +1,11 @@
-@use '../../../styles/variables.scss' as v;
-@use '../../../styles/mixins.scss' as m;
-@use '../../../styles/functions.scss' as f;
+@use "../../../styles/variables.scss" as v;
+@use "../../../styles/mixins.scss" as m;
+@use "../../../styles/functions.scss" as f;
 
 .contacts {
   padding-bottom: 9.0625rem;
-  background: url('../../../assets/images/Home_Projects/bg.svg') left -1.25rem top 6.25rem / 6.4375rem
-    6.4375rem no-repeat;
+  background: url("../../../assets/images/Home_Projects/bg.svg") left -1.25rem top
+    6.25rem / 6.4375rem 6.4375rem no-repeat;
 
   @include m.laptop {
     background: initial;
@@ -44,7 +44,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 10vw;
     height: 0.0625rem;
@@ -62,7 +62,7 @@
   gap: 1rem;
 
   a {
-    display: flex;
+    display: inline-flex;
     gap: 0.4375rem;
     align-items: center;
 

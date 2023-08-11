@@ -13,6 +13,8 @@
   "hero_quoteAvtor": "- Albert Einstein",
   "projects_title": "projects",
   "projects_link": "View all",
+  "project_deploy": "View Live",
+  "project_code": "View Code",
   "skills_title": "skills",
   "about_title": "about-me",
   "about_link": "Read more ->",

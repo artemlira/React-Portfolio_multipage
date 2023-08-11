@@ -83,6 +83,7 @@ function Complete() {
                   // eslint-disable-next-line no-underscore-dangle
                   id={project._id}
                   small={false}
+                  t={t}
                 />
               ))}
         </div>
