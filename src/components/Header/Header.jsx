@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -189,11 +189,16 @@ const Menu = forwardRef(
             </NavLink>
           </li>
         </ul>
-        {isAuth && (
+        {isAuth ? (
           <button className={styles.out} onClick={onClickLogout} type="button">
-            Выйти
+            {t("header_out")}
           </button>
+        ) : (
+          <Link className={styles.login} to="auth/login">
+            {t("header_login")}
+          </Link>
         )}
+
         <select
           defaultValue={lang}
           onChange={(e) => {

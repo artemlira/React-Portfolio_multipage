@@ -167,8 +167,9 @@
   cursor: pointer;
 }
 
-.out {
-  padding: 8px 12px;
+.out,
+.login {
+  padding: 0.5rem 0.75rem;
   background-color: rgb(209, 38, 38);
   color: white;
   border: 1px solid black;
@@ -178,5 +179,13 @@
 
   &:hover {
     background-color: rgb(133, 30, 30);
+  }
+}
+
+.login {
+  background-color: transparent;
+  border: 1px solid v.$purple;
+  &:hover {
+    background-color: v.$purple;
   }
 }

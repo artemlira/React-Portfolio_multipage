@@ -3,6 +3,8 @@
   "header_projects": "projects",
   "header_about": "about-me",
   "header_contacts": "contacts",
+  "header_login": "Log in",
+  "header_out": "Log out",
   "hero_title": "Artem Lira is a ",
   "hero_title_span": "front-end developer",
   "hero_text": "I create high-quality, functional, aesthetically pleasing websites using the latest technologies and relevant standards.",
@@ -39,5 +41,6 @@
   "complete_title": "complete-apps",
   "small_title": "small-projects",
   "media_title": "all-media",
-  "facts_title": "my-fun-facts"
+  "facts_title": "my-fun-facts",
+  "login_pass": "Password"
 }
