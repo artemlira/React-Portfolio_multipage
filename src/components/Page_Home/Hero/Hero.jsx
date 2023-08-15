@@ -22,7 +22,7 @@ function Hero() {
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: 0.8,
       }
     )
       .fromTo(
@@ -34,7 +34,7 @@ function Hero() {
         {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.8,
         }
       )
       .fromTo(
@@ -46,13 +46,13 @@ function Hero() {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.8,
         }
       )
       .fromTo(
         imgItem.current,
         { scale: 0 },
-        { scale: 1, duration: 1, ease: Back.easeOut }
+        { scale: 1, duration: 0.8, ease: Back.easeOut }
       );
   }, [tl]);
   return (
@@ -68,9 +68,11 @@ function Hero() {
               <p className={styles.text} ref={textItem}>
                 {t("hero_text")}
               </p>
-              <Link className={styles.link} to="contacts" ref={buttonItem}>
-                {t("hero_link")}
-              </Link>
+              <div ref={buttonItem}>
+                <Link className={styles.link} to="contacts">
+                  {t("hero_link")}
+                </Link>
+              </div>
             </div>
             <div className={styles.wrapperImage}>
               <div className={styles.image} ref={imgItem} />
