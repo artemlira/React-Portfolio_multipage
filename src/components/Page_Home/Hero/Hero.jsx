@@ -61,10 +61,10 @@ function Hero() {
         <div className={styles.container}>
           <div className={styles.wrapperContent}>
             <div className={styles.content}>
-              <h2 className={styles.title} ref={titleItem}>
+              <h1 className={styles.title} ref={titleItem}>
                 {t("hero_title")}
                 <span>{t("hero_title_span")}</span>
-              </h2>
+              </h1>
               <p className={styles.text} ref={textItem}>
                 {t("hero_text")}
               </p>
