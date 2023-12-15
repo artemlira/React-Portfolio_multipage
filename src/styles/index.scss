@@ -1,6 +1,6 @@
-@use 'variables.scss' as v;
-@use 'mixins.scss' as m;
-@use 'functions.scss' as f;
+@use "variables.scss" as v;
+@use "mixins.scss" as m;
+@use "functions.scss" as f;
 
 *,
 *::before,
@@ -84,4 +84,14 @@ body {
 
 .active-header {
   color: v.$white;
+}
+
+.frame {
+  width: 60vw;
+  height: 400px;
+  margin-inline: auto;
+  iframe {
+    min-width: 100%;
+    min-height: 100%;
+  }
 }
