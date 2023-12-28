@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from "react";
+import React, { forwardRef, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
@@ -7,6 +7,8 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Box, Skeleton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { fetchProjects } from "../../../redux/slices/projects";
+// eslint-disable-next-line import/extensions
+import DB from "../../../DB.jsx";
 import styles from "./Projects.module.scss";
 
 function Projects() {
@@ -18,6 +20,84 @@ function Projects() {
   useEffect(() => {
     dispatch(fetchProjects());
   }, [dispatch]);
+
+  const projectItems = useMemo(() => {
+    switch (projects.status) {
+      case "loading":
+        return skiletons.map((item) => (
+          <Box sx={{ width: 300 }} key={item}>
+            <Skeleton variant="rectangular" width="100%" height={200} />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Skeleton animation="wave" width={80} height={40} />
+              <Skeleton animation="wave" width={80} height={40} />
+            </Box>
+          </Box>
+        ));
+      case "error":
+        return DB.projects.completeApps.map(
+          (project, index) =>
+            index < 3 && (
+              <Card
+                // eslint-disable-next-line no-underscore-dangle
+                key={project.id}
+                img={project.img}
+                imgWebp={project.imgWebp}
+                skills={project.skills}
+                title={project.title}
+                text={
+                  i18n.language === "en"
+                    ? project.shortDescriptionEN
+                    : project.shortDescriptionUA
+                }
+                git={project.git}
+                deploy={project.deploy}
+                isAuth={false}
+                onClickRemove={() => {}}
+                // eslint-disable-next-line no-underscore-dangle
+                id={project._id}
+                small={false}
+                t={t}
+              />
+            )
+        );
+      default:
+        return projects.items.map(
+          (project, index) =>
+            index < 3 && (
+              <Card
+                // eslint-disable-next-line no-underscore-dangle
+                key={project._id}
+                img={project.img}
+                imgWebp={project.imgWebp}
+                skills={project.skills}
+                title={project.title}
+                text={
+                  i18n.language === "en"
+                    ? project.shortDescriptionEN
+                    : project.shortDescriptionUA
+                }
+                git={project.git}
+                deploy={project.deploy}
+                isAuth={false}
+                onClickRemove={() => {}}
+                // eslint-disable-next-line no-underscore-dangle
+                id={project._id}
+                small={false}
+                t={t}
+              />
+            )
+        );
+    }
+  }, [projects.status]);
 
   return (
     <section className={styles.projects}>
@@ -38,7 +118,8 @@ function Projects() {
             </div>
           </div>
           <div className={styles.cards}>
-            {projects?.status === "loading"
+            {projectItems}
+            {/* {projects?.status === "loading"
               ? skiletons.map((item) => (
                   <Box sx={{ width: 300 }} key={item}>
                     <Skeleton variant="rectangular" width="100%" height={200} />
@@ -57,7 +138,8 @@ function Projects() {
                     </Box>
                   </Box>
                 ))
-              : projects.items.map(
+              : projects.status !== "error" &&
+                projects.items.map(
                   (project, index) =>
                     index < 3 && (
                       <Card
@@ -82,7 +164,7 @@ function Projects() {
                         t={t}
                       />
                     )
-                )}
+                )} */}
           </div>
         </div>
       </div>

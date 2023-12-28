@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ import {
   fetchRemoveProject,
 } from "../../../redux/slices/projects";
 import { selectIsAuth } from "../../../redux/slices/auth";
+// eslint-disable-next-line import/extensions
+import DB from "../../../DB.jsx";
 import styles from "./Complete.module.scss";
 
 function Complete() {
@@ -29,6 +31,79 @@ function Complete() {
   };
 
   const completeApps = projects.items;
+
+  const projectItems = useMemo(() => {
+    switch (projects.status) {
+      case "loading":
+        return skiletons.map((item) => (
+          <Box sx={{ width: 300 }} key={item}>
+            <Skeleton variant="rectangular" width="100%" height={200} />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Skeleton animation="wave" width={80} height={40} />
+              <Skeleton animation="wave" width={80} height={40} />
+            </Box>
+          </Box>
+        ));
+      case "error":
+        return DB.projects.completeApps.map((project) => (
+          <Card
+            // eslint-disable-next-line no-underscore-dangle
+            key={project.id}
+            img={project.img}
+            imgWebp={project.imgWebp}
+            skills={project.skills}
+            title={project.title}
+            text={
+              i18n.language === "en"
+                ? project.shortDescriptionEN
+                : project.shortDescriptionUA
+            }
+            git={project.git}
+            deploy={project.deploy}
+            isAuth={isAuth}
+            onClickRemove={onClickRemove}
+            // eslint-disable-next-line no-underscore-dangle
+            id={project._id}
+            small={false}
+            t={t}
+          />
+        ));
+      default:
+        return completeApps?.map((project) => (
+          <Card
+            // eslint-disable-next-line no-underscore-dangle
+            key={project._id}
+            img={project.img}
+            imgWebp={project.imgWebp}
+            skills={project.skills}
+            title={project.title}
+            text={
+              i18n.language === "en"
+                ? project.shortDescriptionEN
+                : project.shortDescriptionUA
+            }
+            git={project.git}
+            deploy={project.deploy}
+            isAuth={isAuth}
+            onClickRemove={onClickRemove}
+            // eslint-disable-next-line no-underscore-dangle
+            id={project._id}
+            small={false}
+            t={t}
+          />
+        ));
+    }
+  }, [projects.status]);
+
   return (
     <section className={styles.complete}>
       <div className="container">
@@ -44,7 +119,8 @@ function Complete() {
           )}
         </div>
         <div className={styles.container}>
-          {projects?.status === "loading"
+          {projectItems}
+          {/* {projects?.status === "loading"
             ? skiletons.map((item) => (
                 <Box sx={{ width: 300 }} key={item}>
                   <Skeleton variant="rectangular" width="100%" height={200} />
@@ -85,7 +161,7 @@ function Complete() {
                   small={false}
                   t={t}
                 />
-              ))}
+              ))} */}
         </div>
       </div>
     </section>

@@ -9,7 +9,6 @@ function Contacts() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { contacts } = useSelector((state) => state.contacts);
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);

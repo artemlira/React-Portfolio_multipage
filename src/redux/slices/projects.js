@@ -46,6 +46,7 @@ const projectsSlice = createSlice({
     [fetchRemoveProject.pending]: (state, action) => {
       // eslint-disable-next-line no-underscore-dangle
       state.projects.items = state.projects.items.filter(
+        // eslint-disable-next-line no-underscore-dangle
         (obj) => obj._id !== action.meta.arg
       );
     },
