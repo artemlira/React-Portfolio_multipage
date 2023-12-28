@@ -97,7 +97,7 @@ function Projects() {
             )
         );
     }
-  }, [projects.status]);
+  }, [i18n.language, projects.items, projects.status, skiletons, t]);
 
   return (
     <section className={styles.projects}>

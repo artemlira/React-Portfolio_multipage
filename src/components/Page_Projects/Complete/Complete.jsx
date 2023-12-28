@@ -102,7 +102,7 @@ function Complete() {
           />
         ));
     }
-  }, [projects.status]);
+  }, [completeApps, i18n.language, isAuth, onClickRemove, projects.status, skiletons, t]);
 
   return (
     <section className={styles.complete}>
