@@ -20,6 +20,8 @@ import Portfolio from './assets/images/Home_Projects/Portfolio.jpg';
 import PortfolioWebp from './assets/images/Home_Projects/portfolio.webp';
 import HealtyFood from './assets/images/Home_Projects/Healthy food.jpg';
 import HealtyFoodWebp from './assets/images/Home_Projects/healthy-food.webp';
+import Geleon from './assets/images/Home_Projects/geleon.png';
+import GeleonWebp from './assets/images/Home_Projects/geleon.webp';
 
 const portfolio = {
   projects: {
@@ -243,6 +245,23 @@ const portfolio = {
         fullDescriptionEN: "",
         git: "https://github.com/artemlira/My_portfolio_full.git",
         deploy: "https://bit.ly/3TpLaDj",
+      },
+      {
+        id: 7,
+        img: Geleon,
+        imgWebp: GeleonWebp,
+        title: "Geleon",
+        skills: ["JavaScript", "TailwindCSS", "HTML", "Swiper slider", "Vite"],
+        shortDescriptionUA:
+          "Односторінковий адаптивний сайт матеріалів для шиномонтажу",
+        shortDescriptionEN:
+          "One-page responsive website of materials for tire fitting works",
+        fullDescriptionUA:
+          "Односторінковий адаптивний сайт матеріалів для шиномонтажу",
+        fullDescriptionEN:
+          "One-page responsive website of materials for tire fitting works",
+        git: "https://github.com/artemlira/geleon",
+        deploy: "https://geleon.vercel.app",
       },
     ],
   },
