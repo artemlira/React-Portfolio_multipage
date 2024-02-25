@@ -1,6 +1,6 @@
 # React-Portfolio_multipage
 ## Link: https://artem-lira.netlify.app/
-Fullstack application. Multipage responsive portfolio website. The application was written using the React.js framework, which used: useEffect, useState, useContext, Router Dom v.6, Styled-components, Express.js, MongoDB, etc.
+MERN Fullstack Application. A multi-page responsive portfolio website. The backend part can be found at https://github.com/artemlira/MERN_Portfolio-back.git The application was written on the React.js framework, which used: useEffect, useState, useContext, Router Dom v.6, Styled components, Express.js, MongoDB and others.
 ### Skills: 
 - React
 - ReduxToolkit
