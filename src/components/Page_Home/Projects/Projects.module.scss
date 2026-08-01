@@ -83,14 +83,107 @@
   }
 }
 
-.cards {
-  display: flex;
-  max-width: 100%;
-  gap: 1rem;
+.sliderWrapper {
+  position: relative;
+}
 
-  @include m.netbook {
-    flex-wrap: wrap;
+.slider {
+  padding-bottom: 3.5rem;
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    top: auto;
+    bottom: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0;
+    border: 0.0625rem solid v.$grey;
+    color: v.$grey;
+    background-color: v.$black;
+    transition:
+      border-color 0.3s,
+      color 0.3s,
+      background-color 0.3s;
+
+    &::after {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    &:hover {
+      border-color: v.$white;
+      color: v.$white;
+      background-color: v.$purple;
+    }
+  }
+
+  :global(.swiper-button-prev) {
+    left: calc(50% - 12rem);
+  }
+
+  :global(.swiper-button-next) {
+    right: calc(50% - 12rem);
+  }
+
+  :global(.swiper-button-disabled) {
+    opacity: 0.35;
+    cursor: default;
+
+    &:hover {
+      border-color: v.$grey;
+      color: v.$grey;
+      background-color: v.$black;
+    }
+  }
+
+  :global(.swiper-pagination) {
+    bottom: 0;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 0.625rem;
+    height: 0.625rem;
+    margin: 0;
+    border: 0.0625rem solid v.$grey;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+    transition:
+      border-color 0.3s,
+      background-color 0.3s,
+      transform 0.3s;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    border-color: v.$purple;
+    background-color: v.$purple;
+    transform: scale(1.2);
+  }
+
+  @include m.phone {
+    padding-bottom: 3rem;
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+      display: none;
+    }
+  }
+}
+
+.slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+
+  .card {
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: flex-start;
   }
 }
 
@@ -141,6 +234,7 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   gap: 1rem;
 }
 

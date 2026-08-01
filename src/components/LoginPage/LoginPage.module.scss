@@ -45,4 +45,18 @@
     background-color: #865294;
     color: v.$white;
   }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+}
+
+.error {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid v.$coral;
+  color: v.$coral;
+  text-align: center;
+  line-height: f.ratio(16, 21);
 }

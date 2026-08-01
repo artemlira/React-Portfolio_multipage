@@ -42,5 +42,8 @@
   "small_title": "малі проєкти",
   "media_title": "всі соц.мережі",
   "facts_title": "мої-цікаві-факти",
+  "footer_role": "Фронтенд розробник",
+  "footer_media": "Соцмережі",
+  "footer_copyright": "© {{year}} Артем Ліра. Усі права захищено.",
   "login_pass": "Пароль"
 }

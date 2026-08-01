@@ -5,7 +5,7 @@ import ModeIcon from "@mui/icons-material/Mode";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { atob } from "js-base64";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { selectIsAuth } from "../../../redux/slices/auth";
 import {
   fetchContacts,

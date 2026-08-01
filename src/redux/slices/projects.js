@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
+import sortProjectsByNewest from "../../utils/projects";
 
 export const fetchProjects = createAsyncThunk(
   "projects/fetchProjects",
@@ -28,28 +29,29 @@ const projectsSlice = createSlice({
   name: "projects",
   initialState,
   reducers: {},
-  extraReducers: {
+  extraReducers: (builder) => {
     // project receipt
-    [fetchProjects.pending]: (state) => {
-      state.projects.items = [];
-      state.projects.status = "loading";
-    },
-    [fetchProjects.fulfilled]: (state, action) => {
-      state.projects.items = action.payload;
-      state.projects.status = "loaded";
-    },
-    [fetchProjects.rejected]: (state) => {
-      state.projects.items = [];
-      state.projects.status = "error";
-    },
-    // project deletion
-    [fetchRemoveProject.pending]: (state, action) => {
-      // eslint-disable-next-line no-underscore-dangle
-      state.projects.items = state.projects.items.filter(
+    builder
+      .addCase(fetchProjects.pending, (state) => {
+        state.projects.items = [];
+        state.projects.status = "loading";
+      })
+      .addCase(fetchProjects.fulfilled, (state, action) => {
+        state.projects.items = sortProjectsByNewest(action.payload);
+        state.projects.status = "loaded";
+      })
+      .addCase(fetchProjects.rejected, (state) => {
+        state.projects.items = [];
+        state.projects.status = "error";
+      })
+      // project deletion
+      .addCase(fetchRemoveProject.pending, (state, action) => {
         // eslint-disable-next-line no-underscore-dangle
-        (obj) => obj._id !== action.meta.arg
-      );
-    },
+        state.projects.items = state.projects.items.filter(
+          // eslint-disable-next-line no-underscore-dangle
+          (obj) => obj._id !== action.meta.arg
+        );
+      });
   },
 });
 

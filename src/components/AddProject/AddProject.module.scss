@@ -22,9 +22,15 @@
   border: 1px solid wheat;
   border-radius: 7px;
   transition: 0.3s ease;
+
   &:hover {
     background-color: #8a5599;
     color: white;
+  }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.65;
   }
 }
 
@@ -58,4 +64,22 @@
 .wrapperImages {
   display: flex;
   gap: 15px;
+}
+
+.status {
+  max-width: 420px;
+  padding: 10px 14px;
+  border: 1px solid v.$grey;
+  text-align: center;
+  line-height: f.ratio(16, 21);
+}
+
+.success {
+  border-color: v.$green;
+  color: v.$green;
+}
+
+.error {
+  border-color: v.$coral;
+  color: v.$coral;
 }

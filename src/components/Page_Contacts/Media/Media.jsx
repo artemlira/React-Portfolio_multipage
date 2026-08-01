@@ -4,7 +4,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { decode } from "js-base64";
 import { selectIsAuth } from "../../../redux/slices/auth";
 import { fetchMedias, fetchRemoveMedia } from "../../../redux/slices/medias";

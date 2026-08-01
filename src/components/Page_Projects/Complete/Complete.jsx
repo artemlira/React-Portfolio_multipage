@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { Box, Skeleton } from "@mui/material";
 import { Card } from "../../Page_Home/Projects/Projects";
@@ -10,6 +10,7 @@ import {
   fetchRemoveProject,
 } from "../../../redux/slices/projects";
 import { selectIsAuth } from "../../../redux/slices/auth";
+import sortProjectsByNewest from "../../../utils/projects";
 // eslint-disable-next-line import/extensions
 import DB from "../../../DB.jsx";
 import styles from "./Complete.module.scss";
@@ -19,23 +20,35 @@ function Complete() {
   const dispatch = useDispatch();
   const { projects } = useSelector((state) => state.projects);
   const isAuth = useSelector(selectIsAuth);
-  const skiletons = [1, 2, 3];
 
   useEffect(() => {
     dispatch(fetchProjects());
   }, [dispatch]);
 
-  const onClickRemove = (data) => {
-    const { id } = data;
-    dispatch(fetchRemoveProject(id));
-  };
+  const onClickRemove = useCallback(
+    (data) => {
+      const { id } = data;
+      // eslint-disable-next-line no-alert
+      const shouldRemove = window.confirm('Видалити цей проект?');
 
-  const completeApps = projects.items;
+      if (!shouldRemove) {
+        return;
+      }
+
+      dispatch(fetchRemoveProject(id));
+    },
+    [dispatch]
+  );
+
+  const completeApps = useMemo(
+    () => sortProjectsByNewest(projects.items),
+    [projects.items]
+  );
 
   const projectItems = useMemo(() => {
     switch (projects.status) {
       case "loading":
-        return skiletons.map((item) => (
+        return [1, 2, 3].map((item) => (
           <Box sx={{ width: 300 }} key={item}>
             <Skeleton variant="rectangular" width="100%" height={200} />
             <Skeleton animation="wave" />
@@ -54,9 +67,8 @@ function Complete() {
           </Box>
         ));
       case "error":
-        return DB.projects.completeApps.map((project) => (
+        return sortProjectsByNewest(DB.projects.completeApps).map((project) => (
           <Card
-            // eslint-disable-next-line no-underscore-dangle
             key={project.id}
             img={project.img}
             imgWebp={project.imgWebp}
@@ -69,10 +81,9 @@ function Complete() {
             }
             git={project.git}
             deploy={project.deploy}
-            isAuth={isAuth}
+            isAuth={false}
             onClickRemove={onClickRemove}
-            // eslint-disable-next-line no-underscore-dangle
-            id={project._id}
+            id={project.id?.toString()}
             small={false}
             t={t}
           />
@@ -102,7 +113,7 @@ function Complete() {
           />
         ));
     }
-  }, [completeApps, i18n.language, isAuth, onClickRemove, projects.status, skiletons, t]);
+  }, [completeApps, i18n.language, isAuth, onClickRemove, projects.status, t]);
 
   return (
     <section className={styles.complete}>

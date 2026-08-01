@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { fetchUserData, selectIsAuth } from "../../redux/slices/auth";
@@ -9,7 +9,10 @@ import styles from "./LoginPage.module.scss";
 function LoginPage() {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
+  const authStatus = useSelector((state) => state.auth.status);
   const { t } = useTranslation();
+  const [serverError, setServerError] = useState("");
+  const isSubmitting = authStatus === "loading";
 
   const {
     register,
@@ -24,12 +27,15 @@ function LoginPage() {
   });
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchUserData(values));
-    if ("token" in data.payload) {
-      window.localStorage.setItem("token", data.payload.token);
-    } else {
-      // eslint-disable-next-line no-alert
-      alert("Не удалось авторизоваться!");
+    setServerError("");
+
+    try {
+      const data = await dispatch(fetchUserData(values)).unwrap();
+      window.localStorage.setItem("token", data.token);
+    } catch (error) {
+      setServerError(
+        typeof error === "string" ? error : "Не вдалося авторизуватися"
+      );
     }
   };
 
@@ -67,9 +73,18 @@ function LoginPage() {
               />
               {errors.password?.message}
             </label>
-            <button type="submit" className={styles.btn} disabled={!isValid}>
-              {t("header_login")}
+            <button
+              type="submit"
+              className={styles.btn}
+              disabled={!isValid || isSubmitting}
+            >
+              {isSubmitting ? "Входимо..." : t("header_login")}
             </button>
+            {serverError && (
+              <p className={styles.error} role="alert">
+                {serverError}
+              </p>
+            )}
           </form>
         </div>
       </div>

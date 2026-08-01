@@ -1,7 +1,18 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "../../utils/axios";
+import {
+  getApiErrorMessage,
+  getCommaSeparatedValues,
+  getTextField,
+} from "../../utils/api";
 import styles from "./AddProject.module.scss";
+
+const isFilledString = (value) =>
+  typeof value === "string" && value.trim().length > 0;
+
+const isDataImage = (value) =>
+  typeof value === "string" && value.startsWith("data:image/");
 
 function AddProject() {
   const { id } = useParams();
@@ -9,54 +20,90 @@ function AddProject() {
   const inputFileWebpRef = useRef(null);
   const [img, setImg] = useState("");
   const [imgWebp, setImgWebp] = useState("");
-  const [title, setTitle] = useState(null);
-  const [skills, setSkills] = useState(null);
-  const [shortDescriptionUA, setShortDescriptionUA] = useState(null);
-  const [shortDescriptionEN, setShortDescriptionEN] = useState(null);
-  const [fullDescriptionUA, setFullDescriptionUA] = useState(null);
-  const [fullDescriptionEN, setFullDescriptionEN] = useState(null);
-  const [git, setGit] = useState(null);
-  const [deploy, setDeploy] = useState(null);
+  const [title, setTitle] = useState("");
+  const [skills, setSkills] = useState("");
+  const [shortDescriptionUA, setShortDescriptionUA] = useState("");
+  const [shortDescriptionEN, setShortDescriptionEN] = useState("");
+  const [fullDescriptionUA, setFullDescriptionUA] = useState("");
+  const [fullDescriptionEN, setFullDescriptionEN] = useState("");
+  const [git, setGit] = useState("");
+  const [deploy, setDeploy] = useState("");
+  const [saveStatus, setSaveStatus] = useState("idle");
+  const [saveMessage, setSaveMessage] = useState("");
   const navigate = useNavigate();
+
+  const isSaving = saveStatus === "saving";
+  const defaultButtonText = id ? "Зберегти" : "Додати";
+  const submitButtonText = isSaving ? "Зберігаємо..." : defaultButtonText;
 
   useEffect(() => {
     if (id) {
       axios.get(`/projects/${id}`).then((res) => {
-        setTitle(res.data.title);
-        setSkills(res.data.skills.join(","));
-        setShortDescriptionUA(res.data.shortDescriptionUA);
-        setShortDescriptionEN(res.data.shortDescriptionEN);
-        setFullDescriptionUA(res.data.fullDescriptionUA);
-        setFullDescriptionEN(res.data.fullDescriptionEN);
-        setGit(res.data.git);
-        setDeploy(res.data.deploy);
-        setImg(res.data.img);
-        setImgWebp(res.data.imgWebp);
+        setTitle(res.data.title ?? "");
+        setSkills(
+          Array.isArray(res.data.skills) ? res.data.skills.join(", ") : ""
+        );
+        setShortDescriptionUA(res.data.shortDescriptionUA ?? "");
+        setShortDescriptionEN(res.data.shortDescriptionEN ?? "");
+        setFullDescriptionUA(res.data.fullDescriptionUA ?? "");
+        setFullDescriptionEN(res.data.fullDescriptionEN ?? "");
+        setGit(res.data.git ?? "");
+        setDeploy(res.data.deploy ?? "");
+        setImg(res.data.img ?? "");
+        setImgWebp(res.data.imgWebp ?? "");
       });
     }
   }, [id]);
 
-  const onSubmit = async () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    if (isSaving) {
+      return;
+    }
+
+    setSaveStatus("saving");
+    setSaveMessage("Зберігаємо зміни...");
+
     try {
       const fields = {
-        base64: img,
-        base64Webp: imgWebp,
-        title,
-        skills: skills.replace(/\s/g, "").split(","),
-        shortDescriptionUA,
-        shortDescriptionEN,
-        fullDescriptionUA,
-        fullDescriptionEN,
-        git,
-        deploy,
+        title: getTextField(title),
+        skills: getCommaSeparatedValues(skills),
+        shortDescriptionUA: getTextField(shortDescriptionUA),
+        shortDescriptionEN: getTextField(shortDescriptionEN),
+        fullDescriptionUA: getTextField(fullDescriptionUA),
+        fullDescriptionEN: getTextField(fullDescriptionEN),
+        git: getTextField(git),
+        deploy: getTextField(deploy),
       };
+
+      if (isDataImage(img)) {
+        fields.base64 = img;
+      } else if (isFilledString(img)) {
+        fields.img = getTextField(img);
+      }
+
+      if (isDataImage(imgWebp)) {
+        fields.base64Webp = imgWebp;
+      } else if (isFilledString(imgWebp)) {
+        fields.imgWebp = getTextField(imgWebp);
+      }
+
       if (id) {
         await axios.patch(`/projects/${id}`, fields);
       } else {
         await axios.post("/projects", fields);
       }
-      navigate("/projects");
+
+      setSaveStatus("success");
+      setSaveMessage("Зміни збережено. Переходимо до списку проєктів...");
+
+      setTimeout(() => {
+        navigate("/projects");
+      }, 900);
     } catch (error) {
+      setSaveStatus("error");
+      setSaveMessage(getApiErrorMessage(error));
       // eslint-disable-next-line no-console
       console.warn(error);
     }
@@ -93,7 +140,7 @@ function AddProject() {
       <div className="container">
         <form
           className={styles.form}
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={onSubmit}
           encType="multipart/form-data"
         >
           <div className={styles.images}>
@@ -239,9 +286,20 @@ function AddProject() {
               />
             </label>
           </div>
-          <button type="submit" className={styles.btn} onClick={onSubmit}>
-            {!id ? "Добавить" : "Сохранить"}
+          <button type="submit" className={styles.btn} disabled={isSaving}>
+            {submitButtonText}
           </button>
+          {saveMessage && (
+            <p
+              className={`${styles.status} ${
+                saveStatus === "error" ? styles.error : styles.success
+              }`}
+              role={saveStatus === "error" ? "alert" : "status"}
+              aria-live="polite"
+            >
+              {saveMessage}
+            </p>
+          )}
         </form>
       </div>
     </section>

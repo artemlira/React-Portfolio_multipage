@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { fetchSkills } from "../../../redux/slices/skills";
 import styles from "./Skills.module.scss";
 

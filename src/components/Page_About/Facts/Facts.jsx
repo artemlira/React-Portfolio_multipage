@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { fetchFacts, fetchRemoveFact } from "../../../redux/slices/facts";
 import { selectIsAuth } from "../../../redux/slices/auth";
 import styles from "./Facts.module.scss";

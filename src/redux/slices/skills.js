@@ -25,26 +25,27 @@ const skillsSlice = createSlice({
   name: "skills",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchSkills.pending]: (state) => {
-      state.skills.items = [];
-      state.skills.status = "loading";
-    },
-    [fetchSkills.fulfilled]: (state, action) => {
-      state.skills.items = action.payload;
-      state.skills.status = "loaded";
-    },
-    [fetchSkills.rejected]: (state) => {
-      state.skills.items = [];
-      state.skills.status = "error";
-    },
-    // skill deletion
-    [fetchRemoveSkill.pending]: (state, action) => {
-      // eslint-disable-next-line no-underscore-dangle
-      state.skills.items = state.skills.items.filter(
-        (obj) => obj._id !== action.meta.arg
-      );
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchSkills.pending, (state) => {
+        state.skills.items = [];
+        state.skills.status = "loading";
+      })
+      .addCase(fetchSkills.fulfilled, (state, action) => {
+        state.skills.items = action.payload;
+        state.skills.status = "loaded";
+      })
+      .addCase(fetchSkills.rejected, (state) => {
+        state.skills.items = [];
+        state.skills.status = "error";
+      })
+      // skill deletion
+      .addCase(fetchRemoveSkill.pending, (state, action) => {
+        state.skills.items = state.skills.items.filter(
+          // eslint-disable-next-line no-underscore-dangle
+          (obj) => obj._id !== action.meta.arg
+        );
+      });
   },
 });
 

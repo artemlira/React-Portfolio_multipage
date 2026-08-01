@@ -25,26 +25,27 @@ const mediasSlice = createSlice({
   name: "medias",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchMedias.pending]: (state) => {
-      state.medias.items = [];
-      state.medias.status = "loading";
-    },
-    [fetchMedias.fulfilled]: (state, action) => {
-      state.medias.items = action.payload;
-      state.medias.status = "loaded";
-    },
-    [fetchMedias.rejected]: (state) => {
-      state.medias.items = [];
-      state.medias.status = "error";
-    },
-    // media deletion
-    [fetchRemoveMedia.pending]: (state, action) => {
-      // eslint-disable-next-line no-underscore-dangle
-      state.medias.items = state.medias.items.filter(
-        (obj) => obj._id !== action.meta.arg
-      );
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMedias.pending, (state) => {
+        state.medias.items = [];
+        state.medias.status = "loading";
+      })
+      .addCase(fetchMedias.fulfilled, (state, action) => {
+        state.medias.items = action.payload;
+        state.medias.status = "loaded";
+      })
+      .addCase(fetchMedias.rejected, (state) => {
+        state.medias.items = [];
+        state.medias.status = "error";
+      })
+      // media deletion
+      .addCase(fetchRemoveMedia.pending, (state, action) => {
+        state.medias.items = state.medias.items.filter(
+          // eslint-disable-next-line no-underscore-dangle
+          (obj) => obj._id !== action.meta.arg
+        );
+      });
   },
 });
 

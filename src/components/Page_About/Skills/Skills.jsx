@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Skill } from "../../Page_Home/Skills/Skills";
 import { selectIsAuth } from "../../../redux/slices/auth";
 import { fetchRemoveSkill, fetchSkills } from "../../../redux/slices/skills";

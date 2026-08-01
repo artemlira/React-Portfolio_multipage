@@ -28,26 +28,27 @@ const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchContacts.pending]: (state) => {
-      state.contacts.items = [];
-      state.contacts.status = "loading";
-    },
-    [fetchContacts.fulfilled]: (state, action) => {
-      state.contacts.items = action.payload;
-      state.contacts.status = "loaded";
-    },
-    [fetchContacts.rejected]: (state) => {
-      state.contacts.items = [];
-      state.contacts.status = "error";
-    },
-    // contact deletion
-    [fetchRemoveContact.pending]: (state, action) => {
-      // eslint-disable-next-line no-underscore-dangle
-      state.contacts.items = state.contacts.items.filter(
-        (obj) => obj._id !== action.meta.arg
-      );
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchContacts.pending, (state) => {
+        state.contacts.items = [];
+        state.contacts.status = "loading";
+      })
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        state.contacts.items = action.payload;
+        state.contacts.status = "loaded";
+      })
+      .addCase(fetchContacts.rejected, (state) => {
+        state.contacts.items = [];
+        state.contacts.status = "error";
+      })
+      // contact deletion
+      .addCase(fetchRemoveContact.pending, (state, action) => {
+        state.contacts.items = state.contacts.items.filter(
+          // eslint-disable-next-line no-underscore-dangle
+          (obj) => obj._id !== action.meta.arg
+        );
+      });
   },
 });
 

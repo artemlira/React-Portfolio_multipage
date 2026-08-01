@@ -1,29 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/icons/LogoAL.svg';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router";
+import Logo from "../assets/icons/LogoAL.svg?react";
 
 const Wrapper = styled.div`
   cursor: pointer;
-  
-    &:hover{
-    #fill{
-      fill:#fff;
+
+  &:hover {
+    #fill {
+      fill: #fff;
     }
-    p{
+    p {
       color: #fff;
     }
   }
 
-  #fill{
-    fill:#abb2bf;
+  #fill {
+    fill: #abb2bf;
   }
 
   .logo {
-  width: 6.25rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
+    width: 6.25rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
 
     svg {
       flex: 0 0 50%;
@@ -32,11 +32,11 @@ const Wrapper = styled.div`
     }
   }
 
-  .name{
+  .name {
     text-align: center;
   }
 
-  p{
+  p {
     color: #abb2bf;
     font-weight: 700;
   }

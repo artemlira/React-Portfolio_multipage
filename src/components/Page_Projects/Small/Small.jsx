@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { Box, Skeleton } from "@mui/material";
 import { Card } from "../../Page_Home/Projects/Projects";
@@ -10,6 +10,7 @@ import {
   fetchSmallProjects,
 } from "../../../redux/slices/smallProjects";
 import { selectIsAuth } from "../../../redux/slices/auth";
+import sortProjectsByNewest from "../../../utils/projects";
 import styles from "./Small.module.scss";
 
 function Small() {
@@ -17,18 +18,30 @@ function Small() {
   const dispatch = useDispatch();
   const { smallProjects } = useSelector((state) => state.smallProjects);
   const isAuth = useSelector(selectIsAuth);
-  const skiletons = [1, 2, 3];
 
   useEffect(() => {
     dispatch(fetchSmallProjects());
   }, [dispatch]);
 
-  const onClickRemove = (data) => {
-    const { id } = data;
-    dispatch(fetchRemoveSmallProject(id));
-  };
+  const onClickRemove = useCallback(
+    (data) => {
+      const { id } = data;
+      // eslint-disable-next-line no-alert
+      const shouldRemove = window.confirm('Видалити цей проект?');
 
-  const projects = smallProjects.items;
+      if (!shouldRemove) {
+        return;
+      }
+
+      dispatch(fetchRemoveSmallProject(id));
+    },
+    [dispatch]
+  );
+
+  const projects = useMemo(
+    () => sortProjectsByNewest(smallProjects.items),
+    [smallProjects.items]
+  );
 
   return (
     <section className={styles.small}>
@@ -45,8 +58,8 @@ function Small() {
           )}
         </div>
         <div className={styles.container}>
-          {projects?.status === "loading"
-            ? skiletons.map((item) => (
+          {smallProjects.status === "loading"
+            ? [1, 2, 3].map((item) => (
                 <Box sx={{ width: 300 }} key={item}>
                   <Skeleton variant="rectangular" width="100%" height={200} />
                   <Skeleton animation="wave" />

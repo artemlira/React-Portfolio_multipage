@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
+import sortProjectsByNewest from "../../utils/projects";
 
 export const fetchSmallProjects = createAsyncThunk(
   "smallProjects/fetchSmallProjects",
@@ -28,26 +29,27 @@ const smallProjectsSlice = createSlice({
   name: "smallProjects",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchSmallProjects.pending]: (state) => {
-      state.smallProjects.items = [];
-      state.smallProjects.status = "loading";
-    },
-    [fetchSmallProjects.fulfilled]: (state, action) => {
-      state.smallProjects.items = action.payload;
-      state.smallProjects.status = "loaded";
-    },
-    [fetchSmallProjects.rejected]: (state) => {
-      state.smallProjects.items = [];
-      state.smallProjects.status = "error";
-    },
-    // project deletion
-    [fetchRemoveSmallProject.pending]: (state, action) => {
-      state.smallProjects.items = state.smallProjects.items.filter(
-        // eslint-disable-next-line no-underscore-dangle
-        (obj) => obj._id !== action.meta.arg
-      );
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchSmallProjects.pending, (state) => {
+        state.smallProjects.items = [];
+        state.smallProjects.status = "loading";
+      })
+      .addCase(fetchSmallProjects.fulfilled, (state, action) => {
+        state.smallProjects.items = sortProjectsByNewest(action.payload);
+        state.smallProjects.status = "loaded";
+      })
+      .addCase(fetchSmallProjects.rejected, (state) => {
+        state.smallProjects.items = [];
+        state.smallProjects.status = "error";
+      })
+      // project deletion
+      .addCase(fetchRemoveSmallProject.pending, (state, action) => {
+        state.smallProjects.items = state.smallProjects.items.filter(
+          // eslint-disable-next-line no-underscore-dangle
+          (obj) => obj._id !== action.meta.arg
+        );
+      });
   },
 });
 

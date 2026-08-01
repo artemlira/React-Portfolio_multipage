@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { decode } from "js-base64";
 import LogoLira from "../LogoLira";
 import { fetchMedias } from "../../redux/slices/medias";
@@ -7,9 +8,11 @@ import { fetchContacts } from "../../redux/slices/contacts";
 import styles from "./Footer.module.scss";
 
 function Footer() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { medias } = useSelector((state) => state.medias);
   const { contacts } = useSelector((state) => state.contacts);
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     dispatch(fetchMedias());
@@ -37,16 +40,17 @@ function Footer() {
                     )
                 )}
               </div>
-              <p className={styles.text}>Front-end developer</p>
+              <p className={styles.text}>{t("footer_role")}</p>
             </div>
             <div className={styles.media}>
-              <h3 className={styles.title}>Media</h3>
+              <h3 className={styles.title}>{t("footer_media")}</h3>
               <div className={styles.icons}>
                 {medias.items?.map((item) => (
                   <a
                     // eslint-disable-next-line no-underscore-dangle
                     key={item._id}
                     href={item.link}
+                    aria-label={item.name}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -61,7 +65,7 @@ function Footer() {
             </div>
           </div>
           <div className={styles.authorship}>
-            <p>© Copyright 2023. Made by Lira Artem</p>
+            <p>{t("footer_copyright", { year: currentYear })}</p>
           </div>
         </div>
       </div>

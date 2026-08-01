@@ -42,5 +42,8 @@
   "small_title": "small-projects",
   "media_title": "all-media",
   "facts_title": "my-fun-facts",
+  "footer_role": "Front-end developer",
+  "footer_media": "Media",
+  "footer_copyright": "© {{year}} Artem Lira. All rights reserved.",
   "login_pass": "Password"
 }

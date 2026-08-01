@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -93,6 +93,7 @@ export default function Header() {
           )}
           <div
             role="button"
+            aria-label={openMenu ? "Close menu" : "Open menu"}
             tabIndex={0}
             className={
               !openMenu
@@ -226,4 +227,4 @@ Menu.propTypes = {
   lang: PropTypes.string.isRequired,
 };
 
-const MMenu = motion(Menu);
+const MMenu = motion.create(Menu);
