@@ -108,7 +108,7 @@ function Projects() {
               </h2>
             </div>
             <div className={styles.link}>
-              <Link to="projects">
+              <Link to="/projects">
                 {t("projects_link")}
                 ~~&gt;
               </Link>
@@ -293,7 +293,7 @@ export const Card = forwardRef(
           {canManage && (
             <div className="MUI_icons">
               <Link
-                to={small ? `/smalls/${id}/edit` : `${id}/edit`}
+                to={small ? `/smalls/${id}/edit` : `/projects/${id}/edit`}
                 aria-label={`Редагувати ${title || "проект"}`}
               >
                 <ModeIcon color="secondary" fontSize="medium" />

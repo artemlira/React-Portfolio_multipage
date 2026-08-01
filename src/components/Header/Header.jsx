@@ -158,7 +158,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <NavLink
-              to="projects"
+              to="/projects"
               className={setActive}
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
@@ -169,7 +169,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <NavLink
-              to="about"
+              to="/about"
               className={setActive}
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
@@ -180,7 +180,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <NavLink
-              to="contacts"
+              to="/contacts"
               className={setActive}
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
@@ -195,7 +195,7 @@ const Menu = forwardRef(
             {t("header_out")}
           </button>
         ) : (
-          <Link className={styles.login} to="auth/login">
+          <Link className={styles.login} to="/auth/login">
             {t("header_login")}
           </Link>
         )}

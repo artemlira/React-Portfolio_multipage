@@ -22,7 +22,7 @@ function AboutMe() {
                 <p className={styles.contentLabel}>{t("about_label")}</p>
                 <p className={styles.contentAboutMe}>{t("about_aboutMe")}</p>
                 <p className={styles.contentText}>{t("about_text")}</p>
-                <Link className={styles.link} to="about">
+                <Link className={styles.link} to="/about">
                   {t("about_link")}
                 </Link>
               </>
