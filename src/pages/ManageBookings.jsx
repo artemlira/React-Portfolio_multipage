@@ -56,6 +56,8 @@ function ManageBookings() {
               <div>
                 <strong>{formatDateTime(booking.startAt, booking.timezone)}</strong>
                 <p>{booking.name} · <a href={`mailto:${booking.email}`}>{booking.email}</a></p>
+                <p>{t("booking_response_status")}: {t(`booking_response_${booking.meetingResponse || "pending"}`)}</p>
+                {booking.meetUrl && <p><a href={booking.meetUrl} target="_blank" rel="noreferrer">Google Meet</a></p>}
                 {booking.note && <p>{booking.note}</p>}
               </div>
               <button type="button" disabled={removingId === booking._id} onClick={() => cancelBooking(booking._id)}>
