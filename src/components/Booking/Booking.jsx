@@ -208,9 +208,13 @@ function Booking({ showSectionHeading = false }) {
         locale: i18n.language,
       });
       formElement.reset();
-      await refreshCurrentMonth();
       setSuccess(t("booking_success"));
       if (!data.notificationSent) setError(t("booking_notification_warning"));
+      try {
+        await refreshCurrentMonth();
+      } catch {
+        // The booking already succeeded; keep its success state if refreshing availability fails.
+      }
     } catch (requestError) {
       setError(requestError?.response?.data?.message || t("booking_submit_error"));
       try {
