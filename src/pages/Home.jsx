@@ -4,6 +4,7 @@ import Projects from '../components/Page_Home/Projects/Projects';
 import Skills from '../components/Page_Home/Skills/Skills';
 import AboutMe from '../components/Page_Home/AboutMe/AboutMe';
 import Contacts from '../components/Page_Home/Contacts/Contacts';
+import Booking from '../components/Booking/Booking';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Projects />
       <Skills />
       <AboutMe />
+      <Booking showSectionHeading />
       <Contacts />
     </article>
   );

@@ -16,6 +16,7 @@ import AddMedia from "./components/AddMedia/AddMedia";
 import AddSkill from "./components/AddSkill/AddSkill";
 import AddFact from "./components/AddFact/AddFact";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ManageBookings from "./pages/ManageBookings";
 
 const protect = (component) => <ProtectedRoute>{component}</ProtectedRoute>;
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="smalls/:id/edit" element={protect(<AddSmallProject />)} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="bookings/manage" element={protect(<ManageBookings />)} />
         <Route path="auth/login" element={<LoginPage />} />
         <Route path="auth/register" element={<RegisterPage />} />
         <Route path="add-project" element={protect(<AddProject />)} />

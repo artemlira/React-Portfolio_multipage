@@ -1,0 +1,290 @@
+@use "../../styles/variables.scss" as v;
+
+.section {
+  padding: 2rem 0;
+}
+
+.panel {
+  border: 1px solid v.$grey;
+  padding: 1.5rem;
+  background: rgba(40, 44, 51, 0.45);
+}
+
+.sectionTitle {
+  max-width: 100%;
+  margin: 0 0 1.5rem;
+  color: v.$white;
+  font-size: clamp(1.25rem, 7vw, 2rem);
+  font-weight: 500;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.sectionTitle span {
+  color: v.$purple;
+}
+
+.heading,
+.timeHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.heading h2 {
+  margin: 0.25rem 0 0.5rem;
+  color: v.$white;
+}
+
+.kicker {
+  margin: 0;
+  color: v.$purple;
+}
+
+.description,
+.empty,
+.timeHeading span,
+.calendarStatus {
+  color: v.$grey;
+}
+
+.manageLink {
+  color: v.$purple;
+  white-space: nowrap;
+}
+
+.calendar {
+  width: min(100%, 34rem);
+  margin: 1.5rem auto 0;
+}
+
+.calendarHeader {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.calendarHeader h3 {
+  margin: 0;
+  color: v.$white;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.monthNav {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid v.$grey;
+  color: v.$white;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.monthNav:hover:not(:disabled) {
+  border-color: v.$purple;
+  color: v.$purple;
+}
+
+.monthNav:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.weekday {
+  padding: 0.35rem 0;
+  color: v.$grey;
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.calendarBlank,
+.calendarDay {
+  min-width: 0;
+  aspect-ratio: 1;
+}
+
+.calendarDay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid rgba(171, 178, 191, 0.2);
+  border-radius: 0.35rem;
+  color: v.$grey;
+  background: rgba(171, 178, 191, 0.04);
+  font: inherit;
+}
+
+.availableDay {
+  border-color: rgba(171, 178, 191, 0.35);
+  color: v.$white;
+  background: rgba(171, 178, 191, 0.1);
+  cursor: pointer;
+}
+
+.availableDay:hover:not(:disabled) {
+  border-color: v.$purple;
+  color: v.$white;
+  background: rgba(199, 120, 221, 0.18);
+  transform: translateY(-2px);
+}
+
+.availableDay:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+.unavailableDay {
+  color: rgba(171, 178, 191, 0.55);
+  background: rgba(171, 178, 191, 0.025);
+}
+
+.todayDate:not(.selectedDate) {
+  border-color: v.$purple;
+  box-shadow: inset 0 0 0 1px rgba(199, 120, 221, 0.35);
+}
+
+.selectedDate {
+  border-color: v.$purple;
+  color: v.$white;
+  background: rgba(199, 120, 221, 0.25);
+}
+
+.unavailableDay.todayDate {
+  color: v.$white;
+}
+
+.availabilityDot {
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: v.$purple;
+}
+
+.selectedDate .availabilityDot {
+  background: v.$white;
+}
+
+.calendarStatus {
+  margin-bottom: 0;
+}
+
+.monthNav:focus-visible,
+.calendarDay:focus-visible,
+.timeButton:focus-visible,
+.submit:focus-visible,
+.manageLink:focus-visible {
+  outline: 2px solid v.$purple;
+  outline-offset: 3px;
+}
+
+.timeArea {
+  width: min(100%, 34rem);
+  margin: 1.5rem auto 0;
+}
+
+.timeHeading {
+  align-items: center;
+}
+
+.timeHeading h3,
+.form h3 {
+  color: v.$white;
+  margin: 0;
+}
+
+.timeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.timeButton {
+  min-width: 5rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid v.$grey;
+  color: v.$white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: v.$purple;
+  background: rgba(199, 120, 221, 0.16);
+}
+
+.form {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid v.$grey;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: v.$grey;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid v.$grey;
+  background: transparent;
+  padding: 0.65rem;
+  color: v.$white;
+  font: inherit;
+}
+
+.submit {
+  align-self: center;
+  border: 1px solid v.$purple;
+  padding: 0.65rem 1rem;
+  color: v.$white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: v.$purple;
+}
+
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.error { color: #ff9b9b; }
+.success { color: v.$green; }
+
+@media (max-width: 600px) {
+  .panel { padding: 1rem; }
+  .heading,
+  .timeHeading { flex-direction: column; }
+  .calendarGrid { gap: 0.2rem; }
+  .calendarDay,
+  .calendarBlank { min-height: 2.5rem; }
+  .formRow { flex-direction: column; }
+}

@@ -11,6 +11,7 @@ import {
   fetchContacts,
   fetchRemoveContact,
 } from "../../../redux/slices/contacts";
+import useContactSubmission from "../../../hooks/useContactSubmission";
 import styles from "./Contact.module.scss";
 
 function Contact() {
@@ -18,6 +19,7 @@ function Contact() {
   const { contacts } = useSelector((state) => state.contacts);
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
+  const { submitting, status, submitContactForm } = useContactSubmission();
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -98,11 +100,9 @@ function Contact() {
           </div>
           <form
             name="contact"
-            method="POST"
-            action="/contact"
+            onSubmit={submitContactForm}
             className={styles.form}
           >
-            <input type="hidden" name="form-name" value="contact" />
             <h4 className={styles.formTitle}>{t("contacts_formTitle")}</h4>
             <div className={styles.label}>
               <input
@@ -133,8 +133,13 @@ function Contact() {
               placeholder={t("contacts_message")}
               required
             />
-            <button type="submit" className={styles.button}>
-              {t("contacts_button")}
+            {status.message && (
+              <p className={styles.formStatus} role={status.type === "error" ? "alert" : "status"}>
+                {status.message}
+              </p>
+            )}
+            <button type="submit" className={styles.button} disabled={submitting}>
+              {submitting ? t("contacts_sending") : t("contacts_button")}
             </button>
           </form>
         </div>
