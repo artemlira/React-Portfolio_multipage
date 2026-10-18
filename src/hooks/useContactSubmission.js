@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import api from "../utils/axios";
 
 export default function useContactSubmission() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: "", message: "" });
 
@@ -20,6 +20,7 @@ export default function useContactSubmission() {
         email: values.get("email"),
         title: values.get("title"),
         message: values.get("message"),
+        locale: i18n.language,
       });
       form.reset();
       setStatus({ type: "success", message: t("contacts_submit_success") });

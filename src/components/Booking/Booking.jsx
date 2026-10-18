@@ -205,6 +205,7 @@ function Booking({ showSectionHeading = false }) {
         email: form.get("email"),
         note: form.get("note"),
         startAt: selectedSlot.startAt,
+        locale: i18n.language,
       });
       formElement.reset();
       await refreshCurrentMonth();
