@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /auth/
+Disallow: /add-
+Disallow: /bookings/manage
+
+Sitemap: https://artemlira.com/sitemap.xml
