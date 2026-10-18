@@ -1,0 +1,17 @@
+@use "../styles/variables.scss" as v;
+
+.page { padding-bottom: 3rem; }
+.panel { display: grid; gap: 1rem; max-width: 48rem; margin: 0 auto; padding: 1.5rem; border: 1px solid v.$grey; }
+.panel h2, .panel p { margin: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.actions button { min-height: 2.75rem; padding: 0.65rem 1rem; border: 1px solid v.$purple; color: v.$white; background: v.$purple; cursor: pointer; }
+.actions button + button { color: v.$purple; background: transparent; }
+.actions button:focus-visible { outline: 2px solid v.$coral; outline-offset: 3px; }
+.actions button:disabled { cursor: wait; opacity: 0.65; }
+.success { color: #64d69b; }
+.error { color: #ff9b9b; }
+
+@media (max-width: 600px) {
+  .panel { padding: 1rem; }
+  .actions { flex-direction: column; }
+}

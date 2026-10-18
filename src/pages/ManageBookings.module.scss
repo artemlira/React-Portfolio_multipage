@@ -1,0 +1,15 @@
+@use "../styles/variables.scss" as v;
+
+.page { padding-bottom: 3rem; }
+.list { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.item { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; border: 1px solid v.$grey; }
+.item p { margin: 0.5rem 0 0; color: v.$grey; }
+.item a { color: v.$purple; }
+.item button { align-self: center; border: 1px solid v.$coral; padding: 0.5rem 0.75rem; color: v.$white; background: transparent; cursor: pointer; }
+.item button:focus-visible { outline: 2px solid v.$purple; outline-offset: 3px; }
+.item button:disabled { cursor: wait; opacity: 0.65; }
+.error { color: #ff9b9b; }
+
+@media (max-width: 600px) {
+  .item { align-items: flex-start; flex-direction: column; }
+}
