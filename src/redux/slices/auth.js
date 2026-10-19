@@ -30,20 +30,6 @@ export const fetchAuthMe = createAsyncThunk(
   }
 );
 
-export const fetchRegister = createAsyncThunk(
-  "auth/fetchRegister",
-  async (params, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.post("/auth/register", params);
-      return data;
-    } catch (error) {
-      return rejectWithValue(
-        error?.response?.data?.message || "Не вдалося зареєструватися"
-      );
-    }
-  }
-);
-
 const initialState = {
   data: null,
   status: "idle",
@@ -89,20 +75,6 @@ const authSlice = createSlice({
         state.status = "error";
         state.error =
           action.payload || "Сесію завершено. Увійдіть в акаунт ще раз.";
-      })
-      .addCase(fetchRegister.pending, (state) => {
-        state.data = null;
-        state.status = "loading";
-        state.error = "";
-      })
-      .addCase(fetchRegister.fulfilled, (state, action) => {
-        state.data = action.payload;
-        state.status = "loaded";
-      })
-      .addCase(fetchRegister.rejected, (state, action) => {
-        state.data = null;
-        state.status = "error";
-        state.error = action.payload || "Не вдалося зареєструватися";
       });
   },
 });

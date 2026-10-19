@@ -69,7 +69,7 @@ function Hero() {
                 {t("hero_text")}
               </p>
               <div ref={buttonItem}>
-                <Link className={styles.link} to="/contacts">
+                <Link className={styles.link} to="/projects">
                   {t("hero_link")}
                 </Link>
               </div>

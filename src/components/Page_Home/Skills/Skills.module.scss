@@ -61,8 +61,11 @@
   flex: 0 1 34%;
 }
 
-.content {
+.skillsContent {
   flex: 0 1 36.5rem;
+}
+
+.content {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
@@ -75,6 +78,20 @@
     justify-content: center;
   }
 
+}
+
+.allSkillsLink {
+  display: block;
+  width: fit-content;
+  margin: 1rem 0 0 auto;
+  color: v.$purple;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+
+  &:focus-visible {
+    outline: 0.125rem solid v.$purple;
+    outline-offset: 0.25rem;
+  }
 }
 
 .skillWrapper {

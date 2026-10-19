@@ -6,6 +6,7 @@ import ModeIcon from "@mui/icons-material/Mode";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router";
 import { fetchSkills } from "../../../redux/slices/skills";
+import getSkillGroups from "../../../utils/skillGroups";
 import styles from "./Skills.module.scss";
 
 function Skills() {
@@ -15,7 +16,8 @@ function Skills() {
     dispatch(fetchSkills());
   }, [dispatch]);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const groups = getSkillGroups(skills.items);
   return (
     <section className={styles.skills}>
       <div className="container">
@@ -24,21 +26,22 @@ function Skills() {
           {t("skills_title")}
         </h2>
         <div className={styles.container}>
-          <div className={styles.content}>
-            {skills.items?.map((item) => (
-              <Skill
-                // eslint-disable-next-line no-underscore-dangle
-                key={item._id}
-                title={
-                  i18n.language === "en" ? item.categoryEN : item.categoryUA
-                }
-                text={item.value}
-                isAuth={false}
-                onClickRemove={() => {}}
-                // eslint-disable-next-line no-underscore-dangle
-                id={item._id}
-              />
-            ))}
+          <div className={styles.skillsContent}>
+            <div className={styles.content}>
+              {groups.map((group) => (
+                <Skill
+                  key={group.key}
+                  title={t(group.label)}
+                  text={group.featured}
+                  isAuth={false}
+                  onClickRemove={() => {}}
+                  id={group.key}
+                />
+              ))}
+            </div>
+            <Link className={styles.allSkillsLink} to="/about">
+              {t("skills_all_link")}
+            </Link>
           </div>
         </div>
       </div>
