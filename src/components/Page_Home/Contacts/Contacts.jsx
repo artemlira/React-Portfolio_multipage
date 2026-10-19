@@ -60,6 +60,9 @@ function Contacts() {
             className={styles.form}
           >
             <h4 className={styles.formTitle}>{t("contacts_formTitle")}</h4>
+            <div className={styles.honeypot} aria-hidden="true">
+              <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             <div className={styles.label}>
               <input
                 type="text"
