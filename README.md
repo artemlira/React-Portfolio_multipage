@@ -161,6 +161,6 @@ The repository's GitHub Actions workflow is **CI**, not the Hostinger deployment
 ## Security notes
 
 - Administrative API calls attach the JWT from browser storage; frontend route protection is for navigation and user experience, while the backend independently protects write endpoints.
-- The API currently has a registration endpoint and does not expose role-based authorization. Before opening registration to the public, restrict account creation or add an explicit administrator/role policy so a newly registered account cannot obtain content-management access.
+- Public account registration is disabled in the API, and `/auth/register` redirects to the administrator login in the frontend. Existing administrator accounts can continue to sign in; do not re-enable public sign-up without a role-based access policy.
 - Do not commit `.env.local`, database URIs, mail credentials, Google Calendar service-account keys, or production tokens.
 - Project images may be stored as base64 data through the API/MongoDB. A dedicated object-storage service could be a future improvement for larger media libraries.
