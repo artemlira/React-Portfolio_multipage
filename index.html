@@ -42,6 +42,30 @@
       property="og:description"
       content="Selected work by Artem Lira across WordPress, Shopify, React, and Next.js, featuring responsive interfaces, thoughtful implementation, and performance."
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://artemlira.com/#person",
+            "name": "Artem Lira",
+            "url": "https://artemlira.com/",
+            "jobTitle": "Frontend Developer",
+            "sameAs": ["https://www.linkedin.com/in/artem-lira/", "https://github.com/artemlira"],
+            "knowsAbout": ["Frontend development", "WordPress", "Shopify", "React", "Next.js", "JavaScript", "TypeScript"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://artemlira.com/#website",
+            "url": "https://artemlira.com/",
+            "name": "Artem Lira — Portfolio",
+            "inLanguage": ["en", "uk"],
+            "publisher": { "@id": "https://artemlira.com/#person" }
+          }
+        ]
+      }
+    </script>
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
