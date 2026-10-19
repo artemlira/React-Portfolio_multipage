@@ -37,15 +37,15 @@ function App() {
     const metadata = isUkrainian
       ? {
           lang: "uk",
-          title: "Артем Ліра — Frontend-розробник | Обрані роботи",
+          title: "Артем Ліра | Портфоліо frontend-розробника",
           description:
-            "Добірка робіт Артема Ліри: вебінтерфейси на WordPress, Shopify, React і Next.js, технічні рішення та проєкти, що показують його підхід до фронтенд-розробки.",
+            "Обрані роботи Артема Ліри на WordPress, Shopify, React і Next.js: адаптивні інтерфейси, продумані технічні рішення та увага до швидкодії.",
         }
       : {
           lang: "en",
-          title: "Artem Lira — Frontend Developer | Selected Work",
+          title: "Artem Lira | Frontend Developer Portfolio",
           description:
-            "Explore selected frontend work by Artem Lira, including WordPress, Shopify, React and Next.js projects, with a focus on clear interfaces, performance, and thoughtful implementation.",
+            "Selected work by Artem Lira across WordPress, Shopify, React, and Next.js, featuring responsive interfaces, thoughtful implementation, and performance.",
         };
 
     document.documentElement.lang = metadata.lang;
@@ -54,6 +54,13 @@ function App() {
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", metadata.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", metadata.description);
     document.querySelector('meta[property="og:site_name"]')?.setAttribute("content", "Artem Lira — Portfolio");
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", metadata.lang === "uk" ? "uk_UA" : "en_US");
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", metadata.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", metadata.description);
+
+    const canonicalUrl = new URL(window.location.pathname, "https://artemlira.com/").href;
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", canonicalUrl);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonicalUrl);
   }, [i18n, i18n.language, i18n.resolvedLanguage]);
 
   return (
