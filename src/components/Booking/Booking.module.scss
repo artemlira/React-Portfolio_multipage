@@ -235,6 +235,15 @@
   gap: 1rem;
 }
 
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .formRow {
   display: flex;
   gap: 1rem;

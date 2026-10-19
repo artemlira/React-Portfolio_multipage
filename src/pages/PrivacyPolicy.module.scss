@@ -1,0 +1,29 @@
+@use '../styles/variables.scss' as v;
+
+.content {
+  max-width: 58rem;
+  padding-bottom: 4rem;
+  line-height: 1.65;
+}
+
+.updated {
+  margin-bottom: 1.5rem;
+  color: v.$white;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    color: v.$white;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.contactLink a {
+  color: v.$white;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

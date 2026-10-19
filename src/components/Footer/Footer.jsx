@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { decode } from "js-base64";
+import { Link } from "react-router";
 import LogoLira from "../LogoLira";
 import { fetchMedias } from "../../redux/slices/medias";
 import { fetchContacts } from "../../redux/slices/contacts";
@@ -66,6 +67,7 @@ function Footer() {
           </div>
           <div className={styles.authorship}>
             <p>{t("footer_copyright", { year: currentYear })}</p>
+            <Link className={styles.privacyLink} to="/privacy-policy">{t("privacy_link")}</Link>
           </div>
         </div>
       </div>

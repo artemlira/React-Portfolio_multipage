@@ -18,6 +18,7 @@ import AddFact from "./components/AddFact/AddFact";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ManageBookings from "./pages/ManageBookings";
 import BookingResponse from "./pages/BookingResponse";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const protect = (component) => <ProtectedRoute>{component}</ProtectedRoute>;
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="smalls/:id/edit" element={protect(<AddSmallProject />)} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="bookings/manage" element={protect(<ManageBookings />)} />
         <Route path="booking/respond" element={<BookingResponse />} />
         <Route path="auth/login" element={<LoginPage />} />

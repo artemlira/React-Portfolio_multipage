@@ -204,6 +204,7 @@ function Booking({ showSectionHeading = false }) {
         name: form.get("name"),
         email: form.get("email"),
         note: form.get("note"),
+        website: form.get("website"),
         startAt: selectedSlot.startAt,
         locale: i18n.language,
       });
@@ -357,6 +358,9 @@ function Booking({ showSectionHeading = false }) {
 
               {selectedSlot && (
                 <form className={styles.form} onSubmit={submitBooking}>
+                  <div className={styles.honeypot} aria-hidden="true">
+                    <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <h3>{t("booking_form_title", {
                     date: formatDate(selectedDate, { dateStyle: "medium" }),
                     time: selectedSlot.label,
